@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6CFC355VH');
+  </script>
 
-  gtag('config', 'G-P6CFC355VH');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alec na Corab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       background-color: #f4f8fb;
       color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #1a73e8;
+      background: linear-gradient(to right, #007bff, #0056b3);
       color: #fff;
-      padding: 20px;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p.subtitle {
+      font-size: 1.2em;
+      color: #ffffff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+    .scroll-down-arrow {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em;
+      color: #fff;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
     }
     section {
       max-width: 900px;
-      margin: 20px auto;
+      margin: 40px auto;
       background: #fff;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     h2 {
-      color: #1a73e8;
+      color: #007bff;
+      margin-top: 0;
     }
     ul {
       list-style: none;
@@ -53,17 +80,39 @@
       color: #34a853;
       font-size: 1.2em;
     }
-    .cta {
-      text-align: center;
-      margin-top: 30px;
-      padding: 20px;
-      background: #e8f0fe;
-      border-radius: 6px;
+    .value-grid {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      row-gap: 20px;
+      column-gap: 15px;
+      align-items: start;
     }
-    .cta a {
-      color: #1a73e8;
+    .value-grid i {
+      font-size: 1.5em;
+      color: #6a1b9a;
+    }
+    .value-grid p {
+      margin: 0;
+    }
+    .contact {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .contact p {
+      margin: 8px 0;
+    }
+    .download-button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+    }
+    .download-button:hover {
+      background-color: #218838;
     }
     footer {
       text-align: center;
@@ -72,68 +121,61 @@
       font-size: 0.9em;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
   <header>
-    <h1>Olá, Corab!</h1>
-    <p>Criei essa página conectando ao CRM de vocês.</p>
+    <h1>Olá, Corab! Aqui é o Alec.</h1>
+    <p class="subtitle">
+      Proatividade real: esta página foi criada do zero, integrada ao Google Analytics e preparada para seu RD Station.
+    </p>
+    <a href="#porque-contratar" class="scroll-down-arrow">&#8595;</a>
   </header>
 
-  <section>
-    <h2>Alec Barbosa de Oliveira Cantuária</h2>
-    <p>Sou especialista em Customer Success com visão Full Funnel. Atuo estrategicamente para elevar a experiência do cliente, aumentar a fidelização e gerar resultados sustentáveis.</p>
-    <p>Lidero estratégias de pós-venda, e-mail marketing e automações que engajam e prolongam o ciclo de vida do cliente, integrando comunicação e valor contínuo. Com olhar analítico e domínio técnico, transformo dados em ações que melhoram a jornada do cliente.</p>
-  </section>
-
-  <section>
-    <h2>Hard Skills</h2>
+  <section id="porque-contratar">
+    <h2>Por que me contratar?</h2>
     <ul>
-      <li> Plataformas de Conteúdo: Gestão de infoprodutos, cursos e webinários em Hotmart, Nutror e HeroSpark.</li>
-      <li>Automação e Marketing: Criação de fluxos multicanal (ManyChat e Email), disparos programados, UTMs e redirecionamentos estratégicos.</li>
-      <li>Email Marketing: Desenvolvimento, segmentação e otimização de campanhas com foco em conversão e testes A/B..</li>
-      <li>Análise de Dados: Monitoramento de métricas, comportamento do usuário e resultados de campanhas para ajustes estratégicos.</li>
-      <li>Dashboards e Relatórios: Visualização de dados e criação de relatórios em Excel, Google Sheets e Looker Studio..</li>
-      <li>CRM e Integração: Operação de ferramentas de CRM e automação para nutrição de leads e processos integrados. </li>
- <li>Gestão de Equipes: Liderança de times de suporte e pós-venda, com foco em eficiência e retenção de clientes.</li>
-    </ul>
-  </section>
-
-
-  <section>
-    <h2>Minhas Características Pessoais</h2>
-    <ul>
-      <li>Proatividade e iniciativa para resolver desafios</li>
-      <li>Comunicação transparente e empática</li>
-      <li>Organização e capacidade de gerenciar múltiplos projetos</li>
-      <li>Foco constante em aprendizado e melhoria contínua</li>
+      <li>Desenvolvi esta página 100% em HTML puro, sem construtores.</li>
+      <li>Integrei Google Analytics e Looker Studio para monitorar desempenho em tempo real.</li>
+      <li>Projeto pronto para conexão ao RD Station e automação de marketing.</li>
+      <li>Proatividade e autonomia na criação de soluções personalizadas.</li>
+      <li>Experiência completa em Customer Success, Marketing Digital e Operações de Suporte.</li>
     </ul>
   </section>
 
   <section>
-    <h2> Certificações</h2>
-    <ul>
-      <li>Customer Success (Sebrae)</li>
-      <li>SDR, Social Selling e Closer (Converte)</li>
-      <li>Tráfego Pago (Comunidade Sobral)</li>
-      <li>Webinar (Webinarflix)</li>
-      <li>Comunidade IA na Prática (Fábio Ricotta)</li>
-      <li>Codaí 2.0 (Growdev)</li>
-    </ul>
+    <h2>Valor que Agrego à Corab</h2>
+    <div class="value-grid">
+      <i class="fas fa-check-circle"></i>
+      <p><strong>Foco em Resultado Comprovado:</strong> Minha expertise em Customer Success e análise de dados gera aquisição, retenção e fidelização.</p>
+
+      <i class="fas fa-check-circle"></i>
+      <p><strong>Visão Estratégica e Hands-on:</strong> Penso estrategicamente e executo com agilidade, transformando ideias em ações eficazes.</p>
+
+      <i class="fas fa-check-circle"></i>
+      <p><strong>Adaptabilidade e Inovação:</strong> Sempre atualizado, trago tendências e tecnologias que colocam a Corab à frente.</p>
+
+      <i class="fas fa-check-circle"></i>
+      <p><strong>Comunicação e Liderança:</strong> Experiência em liderar equipes e projetos complexos com clareza e alinhamento.</p>
+
+      <i class="fas fa-check-circle"></i>
+      <p><strong>Entendimento Profundo de CRM:</strong> Domínio de ferramentas de automação para nutrir leads e maximizar conversão.</p>
+    </div>
   </section>
 
-  <section class="cta">
+  <section class="contact">
     <h2>📞 Vamos conversar?</h2>
-    <p>Estou à disposição para apresentar com mais detalhes como posso contribuir com a Corab Performance Digital.</p>
-    <p><strong>LinkedIn:</strong> <a href= "https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank">Alec Cantuária</a></p>
+    <p>Estou pronto para mostrar como posso contribuir com a Corab Performance Digital.</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank">Alec Cantuária</a></p>
     <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
     <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
+    <a class="download-button" href="curriculo-alec.pdf" download>📄 Baixar meu currículo</a>
   </section>
 
   <footer>
     &copy; 2025 Alec Cantuária - Todos os direitos reservados.
   </footer>
-<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js" ></script>
 
+  <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
 </body>
 </html>
