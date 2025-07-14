@@ -9,14 +9,14 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #f9fafa; /* Fundo geral branco gelo */
+      background-color: #f9fafa;
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      background-color: #001f3f; /* Fundo azul-marinho */
-      color: #ffffff; /* Texto branco */
+      background-color: #001f3f;
+      color: #ffffff;
       padding: 80px 20px;
       text-align: center;
       position: relative;
@@ -30,36 +30,46 @@
     header p.subtitle {
       font-size: 1.2em;
       color: #ffffff;
+      margin: 0 auto;
+      max-width: 700px;
     }
 
-    .scroll-down-arrow {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2em;
-      color: #ffffff;
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
       text-decoration: none;
-      animation: bounce 2s infinite;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
+    .buttons a:hover,
+    .buttons a:focus {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+      outline: none;
     }
 
     section {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 60px auto;
       background: #fff;
       border-radius: 8px;
-      padding: 20px;
+      padding: 30px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     h2 {
-      color: #001f3f; /* Azul-marinho para títulos */
+      color: #001f3f;
       margin-top: 0;
     }
 
@@ -71,31 +81,14 @@
     ul li {
       padding: 8px 0;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
 
     ul li::before {
       content: '✔';
       margin-right: 10px;
-      color: #007bff;
+      color: #28a745;
       font-size: 1.2em;
-    }
-
-    .value-grid {
-      display: grid;
-      grid-template-columns: 30px 1fr;
-      row-gap: 20px;
-      column-gap: 15px;
-      align-items: start;
-    }
-
-    .value-grid i {
-      font-size: 1.4em;
-      color: #007bff;
-    }
-
-    .value-grid p {
-      margin: 0;
     }
 
     .contact {
@@ -107,94 +100,78 @@
       margin: 8px 0;
     }
 
-    .download-button {
-      display: inline-block;
-      margin-top: 15px;
-      background-color: #28a745;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-button:hover,
-    .download-button:focus {
-      background-color: #218838;
-      outline: none;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
-      color: #555;
-      font-size: 0.9em;
-      background-color: #fff;
-      border-top: 1px solid #e0e0e0;
+      color: #777;
+      font-size: 0.85em;
+      background-color: #f9fafa;
+      border-top: 1px solid #ddd;
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Olá! Aqui é o Alec.</h1>
-    <p class="subtitle">
-      Pronto para somar ao seu time. Esta página foi criada do zero, só com HTML puro, e integrada a métricas como Google Analytics, Looker Studio e CRM.
-    </p>
-    <a href="#porque-contratar" class="scroll-down-arrow" aria-label="Scroll para a seção Por que me contratar">&#8595;</a>
-  </header>
 
-  <section id="porque-contratar">
-    <h2>Por que me contratar?</h2>
-    <ul>
-      <li>Experiência em liderar times de Customer Success e Pós-venda, com foco em retenção e crescimento.</li>
-      <li>Atuação prática em automação multicanal: e-mail marketing, WhatsApp, CRM e funis de vendas.</li>
-      <li>Experiência avançada em CRM, automação e métricas, conectando dados e comunicação para engajar e fidelizar clientes.</li>
-      <li>Capacidade de transformar dados e métricas em decisões estratégicas e ações concretas.</li>
-      <li>Proatividade e autonomia para criar soluções personalizadas que geram resultados reais.</li>
-    </ul>
-  </section>
+<header>
+  <h1>Planejo, executo e otimizo jornadas digitais com dados, CRM e automação multicanal.</h1>
+  <p class="subtitle">
+    Esta página foi criada do zero, só com HTML puro, e integrada a métricas como Google Analytics, Looker Studio e CRM.
+  </p>
+  <div class="buttons">
+    <a href="LINK-PARA-SEU-CURRICULO.pdf" target="_blank">📄 Ver meu currículo</a>
+    <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
+  </div>
+</header>
 
-  <section>
-    <h2>Como Posso Somar ao Seu Time</h2>
-    <div class="value-grid">
-      <i class="fas fa-check-circle"></i>
-      <p><strong>Proatividade e Comprometimento:</strong> Atuação sempre pautada por responsabilidade, dedicação e entrega constante, com ótimas recomendações de ex-lideranças que comprovam meu perfil profissional.</p>
+<section>
+  <h2>🚀 O que eu entrego</h2>
+  <ul>
+    <li><strong>Automação inteligente com propósito:</strong> Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</li>
+    <li><strong>Análise e decisão baseada em dados:</strong> Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</li>
+    <li><strong>Execução ágil com visão estratégica:</strong> Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</li>
+    <li><strong>Perfil comprometido e confiável:</strong> Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</li>
+  </ul>
+</section>
 
-      <i class="fas fa-check-circle"></i>
-      <p><strong>Foco em Resultado Comprovado:</strong> Minha expertise em Customer Success e análise de dados gera aquisição, retenção e fidelização.</p>
+<section>
+  <h2>💼 Experiências que sustentam meu trabalho</h2>
+  <ul>
+    <li><strong>Supervisor de Pós-Venda – Evoluna</strong><br>
+      Liderança de equipe, execução técnica de webinários e criação de campanhas automatizadas de alto desempenho.</li>
+    <li><strong>Founding Sales Ops – Fluida</strong><br>
+      Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</li>
+    <li><strong>SDR & Gestor de Tráfego – Mynt</strong><br>
+      Captação, qualificação de leads e campanhas de mídia paga.</li>
+  </ul>
+  <p><a href="LINK-PARA-SEU-CURRICULO.pdf" target="_blank">📄 Ver meu currículo completo</a></p>
+</section>
 
-      <i class="fas fa-check-circle"></i>
-      <p><strong>Visão Estratégica e Hands-on:</strong> Penso estrategicamente e executo com agilidade, transformando ideias em ações eficazes.</p>
+<section>
+  <h2>🔍 Recomendações e credibilidade</h2>
+  <ul>
+    <li>"Alec sempre demonstrou proatividade e compromisso com resultados acima da média. Sua capacidade de execução e visão estratégica fizeram diferença no nosso time."<br><em>– Liderança na Evoluna</em></li>
+    <li>"Profissional confiável, com grande domínio técnico e habilidade em integrar processos e comunicação com dados."<br><em>– Gestor Comercial na Fluida</em></li>
+  </ul>
+</section>
 
-      <i class="fas fa-check-circle"></i>
-      <p><strong>Adaptabilidade e Inovação:</strong> Sempre atualizado, trago tendências e tecnologias que colocam a Corab à frente.</p>
+<section class="contact">
+  <h2>📞 Vamos conversar?</h2>
+  <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
+  <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
+  <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
+  <div class="buttons">
+    <a href="LINK-PARA-SEU-CURRICULO.pdf" target="_blank">📄 Acesse Meu Currículo Aqui</a>
+    <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
+  </div>
+</section>
 
-      <i class="fas fa-check-circle"></i>
-      <p><strong>Comunicação e Liderança:</strong> Experiência em liderar equipes e projetos complexos com clareza e alinhamento.</p>
+<footer>
+  &copy; 2025 Alec Cantuária - Todos os direitos reservados.
+</footer>
 
-      <i class="fas fa-check-circle"></i>
-      <p><strong>Entendimento Profundo de CRM:</strong> Domínio de ferramentas de automação para nutrir leads e maximizar conversão.</p>
-    </div>
-  </section>
+<!-- Linha de automação — manter intacta -->
+<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
 
-  <section class="contact">
-    <h2>📞 Vamos conversar?</h2>
-    <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
-    <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
-    <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-    <a href="https://drive.google.com/file/d/1wmzEfHqHxtSnvDGy20yrbL5VnDIWmUty/view?usp=sharing" class="download-button" target="_blank" rel="noopener noreferrer">
-      📄 Acesse Meu Currículo Aqui
-    </a>
-  </section>
-
-  <footer>
-    &copy; 2025 Alec Cantuária - Todos os direitos reservados.
-  </footer>
-
-  <!-- Linha de automação — manter intacta -->
-  <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
 </body>
 </html>
