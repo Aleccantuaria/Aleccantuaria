@@ -367,5 +367,29 @@
 
 <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
 
+<script>
+(function() {
+  function getUTM(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || "";
+  }
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    url: window.location.href,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    utm_source: getUTM('utm_source'),
+    utm_medium: getUTM('utm_medium'),
+    utm_campaign: getUTM('utm_campaign')
+  };
+
+  fetch("https://hook.integromat.com/XXXXXXXXXXXXX", { // Cole aqui sua URL do Make
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+})();
+</script>
 </body>
 </html>
