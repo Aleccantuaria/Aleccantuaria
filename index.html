@@ -1,199 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Alec Cantuária - Customer Success</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f9fafa;
-            color: #333;
-            line-height: 1.6;
-        }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6CFC355VH');
+  </script>
 
-        header {
-            background-color: #001f3f; /* Azul marinho */
-            color: #ffffff;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alec Cantuária - Customer Success</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background-color: #f9fafa; /* Mantido o cinza claro original para o fundo do body */
+        color: #333;
+        line-height: 1.6;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    header {
+        background-color: #001f3f; /* Azul marinho */
+        color: #ffffff;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+    }
 
-        header p.subtitle {
-            font-size: 1.2em;
-            color: #ffffff;
-            margin: 0 auto;
-            max-width: 700px;
-        }
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
 
-        /* Estilo base para todos os botões (links transformados em botões) */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            margin: 0.5rem;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            white-space: nowrap; /* Impede que o texto do botão quebre */
-        }
+    header p.subtitle {
+        font-size: 1.2em;
+        color: #ffffff;
+        margin: 0 auto;
+        max-width: 700px;
+    }
 
-        .btn .icon {
-            margin-right: 8px; /* Espaçamento entre o ícone e o texto */
-        }
+    /* Seta para rolar a página com acessibilidade */
+    .scroll-down-arrow {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
 
-        /* Botões primários (azul marinho - header e contact section) */
-        .btn-primary {
-            background-color: #001f3f; /* AZUL MARINHO - Corrigido */
-            color: white;
-        }
+    /* Estilo base para todos os botões (links transformados em botões) */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        margin: 0.5rem;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        white-space: nowrap; /* Impede que o texto do botão quebre */
+    }
 
-        .btn-primary:hover,
-        .btn-primary:focus {
-            background-color: #00152b; /* Azul marinho mais escuro no hover */
-            transform: translateY(-2px);
-            outline: none;
-        }
+    .btn .icon {
+        margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    }
 
-        /* Botão secundário (branco - experiences section) */
-        .btn-secondary {
-            background-color: white;
-            color: #001f3f; /* Texto azul marinho */
-            border: 1px solid #001f3f; /* Borda azul marinho para destaque */
-        }
+    /* Botões primários (azul marinho - header e contact section) */
+    .btn-primary {
+        background-color: #001f3f; /* AZUL MARINHO */
+        color: white;
+    }
 
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-            background-color: #e0e0e0; /* Cinza claro no hover */
-            color: #00152b; /* Texto azul marinho mais escuro no hover */
-            transform: translateY(-2px);
-            outline: none;
-        }
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #00152b; /* Azul marinho mais escuro no hover */
+        transform: translateY(-2px);
+        outline: none;
+    }
 
-        /* Classes para containers de botões */
-        .header-buttons,
-        .contact-buttons {
-            margin-top: 30px;
-            text-align: center; /* Centraliza os botões */
-        }
+    /* Botão secundário (branco - experiences section) */
+    .btn-secondary {
+        background-color: white;
+        color: #001f3f; /* Texto azul marinho */
+        border: 1px solid #001f3f; /* Borda azul marinho para destaque */
+    }
 
-        .experiences-button-container {
-            margin-top: 20px;
-            text-align: left; /* Alinha este botão à esquerda */
-        }
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+        background-color: #e0e0e0; /* Cinza claro no hover */
+        color: #00152b; /* Texto azul marinho mais escuro no hover */
+        transform: translateY(-2px);
+        outline: none;
+    }
 
+    /* Classes para containers de botões */
+    .header-buttons,
+    .contact-buttons {
+        margin-top: 30px;
+        text-align: center; /* Centraliza os botões */
+    }
 
-        section {
-            max-width: 900px;
-            margin: 60px auto;
-            background: #fff;
-            border-radius: 8px;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: #001f3f;
-            margin-top: 0;
-            display: flex; /* Para alinhar ícones nos títulos */
-            align-items: center;
-        }
-
-        /* Estilo para ícones em títulos */
-        h2 .title-icon {
-            margin-right: 10px;
-            font-size: 1.2em;
-            color: #001f3f; /* Cor do título */
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        /* Estilo para as listas com checks padrão (O que eu entrego, Minha caixa de ferramentas) */
-        .default-list li {
-            padding: 8px 0;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .default-list li::before {
-            content: '✔';
-            margin-right: 10px;
-            color: #28a745;
-            font-size: 1.2em;
-            flex-shrink: 0; /* Impede que o ícone encolha */
-        }
-
-        /* NOVO: Estilo para os itens da caixa de ferramentas para melhor alinhamento */
-        .default-list li .item-content {
-            display: flex;
-            flex-wrap: wrap; /* Permite que o texto quebre para a próxima linha */
-            align-items: baseline; /* Alinha o texto base com o título */
-            flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
-        }
-
-        .default-list li .item-content strong {
-            margin-right: 5px; /* Pequeno espaço entre o título e a descrição */
-            white-space: nowrap; /* Garante que o título não quebre, se possível */
-        }
+    .experiences-button-container {
+        margin-top: 20px;
+        text-align: left; /* Alinha este botão à esquerda */
+    }
 
 
-        /* Estilo específico para a seção de Experiências */
-        .experiences-section ul li {
-            padding: 8px 0;
-            display: flex; /* Habilita flexbox para alinhar o ícone e o conteúdo */
-            align-items: flex-start; /* Alinha o topo do ícone com o topo do texto */
-        }
+    section {
+        max-width: 900px;
+        margin: 60px auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 30px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
 
-        .experiences-section .check-icon {
-            color: #28a745; /* Cor verde para o check */
-            font-size: 1.2em; /* Tamanho do check */
-            margin-right: 10px; /* Espaçamento entre o check e o texto */
-            flex-shrink: 0; /* Impede que o ícone encolha */
-        }
+    h2 {
+        color: #001f3f;
+        margin-top: 0;
+        display: flex; /* Para alinhar ícones nos títulos */
+        align-items: center;
+    }
 
-        .experiences-section .experience-content {
-            /* flex-grow: 1; Removido pois não é estritamente necessário e pode causar quebras indesejadas */
-        }
+    /* Estilo para ícones em títulos */
+    h2 .title-icon {
+        margin-right: 10px;
+        font-size: 1.2em;
+        color: #001f3f; /* Cor do título */
+    }
 
-        .experiences-section strong {
-            display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
-            margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
-        }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    /* Estilo para as listas com checks padrão (O que eu entrego, Minha caixa de ferramentas) */
+    .default-list li {
+        padding: 8px 0;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .default-list li::before {
+        content: '✔';
+        margin-right: 10px;
+        color: #28a745;
+        font-size: 1.2em;
+        flex-shrink: 0; /* Impede que o ícone encolha */
+    }
+
+    /* Estilo para os itens da caixa de ferramentas para melhor alinhamento */
+    .default-list li .item-content {
+        display: flex;
+        flex-wrap: wrap; /* Permite que o texto quebre para a próxima linha */
+        align-items: baseline; /* Alinha o texto base com o título */
+        flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    }
+
+    .default-list li .item-content strong {
+        margin-right: 5px; /* Pequeno espaço entre o título e a descrição */
+        white-space: nowrap; /* Garante que o título não quebre, se possível */
+    }
 
 
-        .contact {
-            text-align: center;
-            padding: 30px 20px;
-        }
+    /* Estilo específico para a seção de Experiências */
+    .experiences-section ul li {
+        padding: 8px 0;
+        display: flex; /* Habilita flexbox para alinhar o ícone e o conteúdo */
+        align-items: flex-start; /* Alinha o topo do ícone com o topo do texto */
+    }
 
-        .contact p {
-            margin: 8px 0;
-        }
+    .experiences-section .check-icon {
+        color: #28a745; /* Cor verde para o check */
+        font-size: 1.2em; /* Tamanho do check */
+        margin-right: 10px; /* Espaçamento entre o check e o texto */
+        flex-shrink: 0; /* Impede que o ícone encolha */
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.85em;
-            background-color: #f9fafa;
-            border-top: 1px solid #ddd;
-        }
+    .experiences-section .experience-content {
+        /* flex-grow: 1; Removido pois não é estritamente necessário e pode causar quebras indesejadas */
+    }
 
-    </style>
+    .experiences-section strong {
+        display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
+        margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
+    }
+
+
+    .contact {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .contact p {
+        margin: 8px 0;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 0.85em;
+        background-color: #f9fafa;
+        border-top: 1px solid #ddd;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -206,10 +232,10 @@
         <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
         <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
     </div>
+    <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
 </header>
 
-<section>
-    <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
+<section id="o-que-eu-entrego"> <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
     <ul class="default-list">
         <li>
             <div class="item-content">
