@@ -15,7 +15,7 @@
         }
 
         header {
-            background-color: #001f3f;
+            background-color: #001f3f; /* Azul marinho */
             color: #ffffff;
             padding: 80px 20px;
             text-align: center;
@@ -46,7 +46,7 @@
             font-size: 1rem;
             transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            white-space: nowrap; /* Impede que o texto quebre */
+            white-space: nowrap; /* Impede que o texto do botão quebre */
         }
 
         .btn .icon {
@@ -55,13 +55,13 @@
 
         /* Botões primários (azul marinho - header e contact section) */
         .btn-primary {
-            background-color: #007bff; /* Azul padrão */
+            background-color: #001f3f; /* AZUL MARINHO - Corrigido */
             color: white;
         }
 
         .btn-primary:hover,
         .btn-primary:focus {
-            background-color: #0056b3; /* Azul mais escuro no hover */
+            background-color: #00152b; /* Azul marinho mais escuro no hover */
             transform: translateY(-2px);
             outline: none;
         }
@@ -69,14 +69,14 @@
         /* Botão secundário (branco - experiences section) */
         .btn-secondary {
             background-color: white;
-            color: #007bff; /* Texto azul */
-            border: 1px solid #007bff; /* Borda azul para destaque */
+            color: #001f3f; /* Texto azul marinho */
+            border: 1px solid #001f3f; /* Borda azul marinho para destaque */
         }
 
         .btn-secondary:hover,
         .btn-secondary:focus {
             background-color: #e0e0e0; /* Cinza claro no hover */
-            color: #0056b3; /* Texto azul mais escuro no hover */
+            color: #00152b; /* Texto azul marinho mais escuro no hover */
             transform: translateY(-2px);
             outline: none;
         }
@@ -137,6 +137,20 @@
             flex-shrink: 0; /* Impede que o ícone encolha */
         }
 
+        /* NOVO: Estilo para os itens da caixa de ferramentas para melhor alinhamento */
+        .default-list li .item-content {
+            display: flex;
+            flex-wrap: wrap; /* Permite que o texto quebre para a próxima linha */
+            align-items: baseline; /* Alinha o texto base com o título */
+            flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+        }
+
+        .default-list li .item-content strong {
+            margin-right: 5px; /* Pequeno espaço entre o título e a descrição */
+            white-space: nowrap; /* Garante que o título não quebre, se possível */
+        }
+
+
         /* Estilo específico para a seção de Experiências */
         .experiences-section ul li {
             padding: 8px 0;
@@ -188,7 +202,8 @@
     <p class="subtitle">
         Esta página foi criada do zero, só com HTML puro, e integrada a métricas como Google Analytics, Looker Studio e CRM.
     </p>
-    <div class="header-buttons"> <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
+    <div class="header-buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
         <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
     </div>
 </header>
@@ -196,10 +211,30 @@
 <section>
     <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
     <ul class="default-list">
-        <li><strong>Automação inteligente com propósito:</strong> Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</li>
-        <li><strong>Análise e decisão baseada em dados:</strong> Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</li>
-        <li><strong>Execução ágil com visão estratégica:</strong> Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</li>
-        <li><strong>Perfil comprometido e confiável:</strong> Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</li>
+        <li>
+            <div class="item-content">
+                <strong>Automação inteligente com propósito:</strong>
+                <span>Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Análise e decisão baseada em dados:</strong>
+                <span>Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Execução ágil com visão estratégica:</strong>
+                <span>Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Perfil comprometido e confiável:</strong>
+                <span>Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</span>
+            </div>
+        </li>
     </ul>
 </section>
 
@@ -228,7 +263,8 @@
             </div>
         </li>
     </ul>
-    <div class="experiences-button-container"> <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
+    <div class="experiences-button-container">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
             <span class="icon">📄</span> Ver meu currículo completo
         </a>
     </div>
@@ -237,14 +273,53 @@
 <section>
     <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
     <ul class="default-list">
-        <li><strong>Plataformas de Conteúdo:</strong> Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</li>
-        <li><strong>Automação e Marketing:</strong> Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</li>
-        <li><strong>E-mail Marketing:</strong> Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</li>
-        <li><strong>Análise de Dados:</strong> Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</li>
-        <li><strong>Planilhas e Dashboards:</strong> Criação de relatórios em Excel, Google Sheets e Looker Studio.</li>
-        <li><strong>CRM e Automação:</strong> Atuação com diversas ferramentas para integração de processos e nutrição de leads.</li>
-        <li><strong>Gestão de Equipes:</strong> Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</li>
-        <li><em>Estou sempre aprimorando minhas habilidades em plataformas de infoprodutos, automação, SQL, Make e rastreamento de dados.</em></li>
+        <li>
+            <div class="item-content">
+                <strong>Plataformas de Conteúdo:</strong>
+                <span>Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Automação e Marketing:</strong>
+                <span>Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>E-mail Marketing:</strong>
+                <span>Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Análise de Dados:</strong>
+                <span>Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Planilhas e Dashboards:</strong>
+                <span>Criação de relatórios em Excel, Google Sheets e Looker Studio.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>CRM e Automação:</strong>
+                <span>Atuação com diversas ferramentas para integração de processos e nutrição de leads.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Gestão de Equipes:</strong>
+                <span>Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <em>Estou sempre aprimorando minhas habilidades em plataformas de Infoprodutos, automação, SQL, Make e rastreamento de dados.</em>
+            </div>
+        </li>
     </ul>
 </section>
 
@@ -254,7 +329,8 @@
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
     <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
     <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-    <div class="contact-buttons"> <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
+    <div class="contact-buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
         <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
     </div>
 </section>
