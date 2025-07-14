@@ -1,183 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alec Cantuária - Customer Success</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f9fafa;
-      color: #333;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Alec Cantuária - Customer Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f9fafa;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    header {
-      background-color: #001f3f;
-      color: #ffffff;
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-    }
+        header {
+            background-color: #001f3f;
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
 
-    header p.subtitle {
-      font-size: 1.2em;
-      color: #ffffff;
-      margin: 0 auto;
-      max-width: 700px;
-    }
+        header p.subtitle {
+            font-size: 1.2em;
+            color: #ffffff;
+            margin: 0 auto;
+            max-width: 700px;
+        }
 
-    .buttons {
-      margin-top: 30px;
-    }
+        .buttons {
+            margin-top: 30px;
+        }
 
-    .buttons a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 12px 24px;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+        .buttons a {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
 
-    .buttons a:hover,
-    .buttons a:focus {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-      outline: none;
-    }
+        .buttons a:hover,
+        .buttons a:focus {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            outline: none;
+        }
 
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      background: #fff;
-      border-radius: 8px;
-      padding: 30px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+        section {
+            max-width: 900px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-    h2 {
-      color: #001f3f;
-      margin-top: 0;
-    }
+        h2 {
+            color: #001f3f;
+            margin-top: 0;
+            display: flex; /* Para alinhar ícones nos títulos */
+            align-items: center;
+        }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+        /* Estilo para ícones em títulos */
+        h2 .title-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #001f3f; /* Cor do título */
+        }
 
-    ul li {
-      padding: 8px 0;
-      display: flex;
-      align-items: flex-start;
-    }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    ul li::before {
-      content: '✔';
-      margin-right: 10px;
-      color: #28a745;
-      font-size: 1.2em;
-    }
+        /* Estilo para as listas com checks padrão (O que eu entrego, Minha caixa de ferramentas) */
+        .default-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
 
-    .contact {
-      text-align: center;
-      padding: 30px 20px;
-    }
+        .default-list li::before {
+            content: '✔';
+            margin-right: 10px;
+            color: #28a745;
+            font-size: 1.2em;
+            flex-shrink: 0; /* Impede que o ícone encolha */
+        }
 
-    .contact p {
-      margin: 8px 0;
-    }
+        /* Estilo específico para a seção de Experiências */
+        .experiences-section ul li {
+            padding: 8px 0;
+            display: flex; /* Habilita flexbox para alinhar o ícone e o conteúdo */
+            align-items: flex-start; /* Alinha o topo do ícone com o topo do texto */
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 0.85em;
-      background-color: #f9fafa;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+        .experiences-section .check-icon {
+            color: #28a745; /* Cor verde para o check */
+            font-size: 1.2em; /* Tamanho do check */
+            margin-right: 10px; /* Espaçamento entre o check e o texto */
+            flex-shrink: 0; /* Impede que o ícone encolha */
+        }
+
+        .experiences-section .experience-content {
+            /* flex-grow: 1; Removido pois não é estritamente necessário e pode causar quebras indesejadas */
+        }
+
+        .experiences-section strong {
+            display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
+            margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
+        }
+
+        .contact {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.85em;
+            background-color: #f9fafa;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Estilo para o botão "Ver meu currículo completo" dentro da seção de experiências */
+        .experiences-section .button-container {
+            text-align: left; /* Alinha o botão à esquerda, como na imagem */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+        .experiences-section .button-container .btn-link {
+            display: inline-flex; /* Para alinhar o ícone com o texto */
+            align-items: center;
+            background-color: #007bff; /* Cor azul */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .experiences-section .button-container .btn-link .icon {
+            margin-right: 8px; /* Espaçamento entre o ícone e o texto no botão */
+        }
+        .experiences-section .button-container .btn-link:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); /* Mantém o efeito do hover original */
+        }
+
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>Alec Cantuária</h1>
-  <p class="subtitle">
-    Esta página foi criada do zero, só com HTML puro, e integrada a métricas como Google Analytics, Looker Studio e CRM.
-  </p>
-  <div class="buttons">
-    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Ver meu currículo</a>
-    <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
-  </div>
+    <h1>Alec Cantuária</h1>
+    <p class="subtitle">
+        Esta página foi criada do zero, só com HTML puro, e integrada a métricas como Google Analytics, Looker Studio e CRM.
+    </p>
+    <div class="buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Ver meu currículo</a>
+        <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
+    </div>
 </header>
 
 <section>
-  <h2>🚀 O que eu entrego</h2>
-  <ul>
-    <li><strong>Automação inteligente com propósito:</strong> Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</li>
-    <li><strong>Análise e decisão baseada em dados:</strong> Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</li>
-    <li><strong>Execução ágil com visão estratégica:</strong> Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</li>
-    <li><strong>Perfil comprometido e confiável:</strong> Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</li>
-  </ul>
+    <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
+    <ul class="default-list"> <li><strong>Automação inteligente com propósito:</strong> Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</li>
+        <li><strong>Análise e decisão baseada em dados:</strong> Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</li>
+        <li><strong>Execução ágil com visão estratégica:</strong> Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</li>
+        <li><strong>Perfil comprometido e confiável:</strong> Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</li>
+    </ul>
+</section>
+
+<section class="experiences-section"> <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
+    <ul>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>Supervisor de Pós-Venda – Evoluna</strong>
+                <p>Liderança de equipe, execução e otimização de jornadas digitais com dados, CRM e automação multicanal com traqueamento de dados.</p>
+            </div>
+        </li>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>Founding Sales Ops – Fluida</strong>
+                <p>Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</p>
+            </div>
+        </li>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>SDR & Gestor de Tráfego – Mynt</strong>
+                <p>Captação, qualificação de leads e campanhas de mídia paga.</p>
+            </div>
+        </li>
+    </ul>
+    <div class="button-container">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn-link">
+            <span class="icon">📄</span> Ver meu currículo completo
+        </a>
+    </div>
 </section>
 
 <section>
-  <h2>💼 Experiências que sustentam meu trabalho</h2>
-  <ul>
-    <li><strong>Supervisor de Pós-Venda – Evoluna</strong><br>
-      Liderança de equipe, execução e otimização de jornadas digitais com dados, CRM e automação multicanal com traqueamento de dados.</li>
-    <li><strong>Founding Sales Ops – Fluida</strong><br>
-      Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</li>
-    <li><strong>SDR & Gestor de Tráfego – Mynt</strong><br>
-      Captação, qualificação de leads e campanhas de mídia paga.</li>
-  </ul>
-  <div class="buttons">
-  <p><a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Ver meu currículo completo</a></p>
-</section>
-
-<section>
-  <h2>🛠️ Minha caixa de ferramentas</h2>
-  <ul>
-    <li><strong>Plataformas de Conteúdo:</strong> Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</li>
-    <li><strong>Automação e Marketing:</strong> Criação de fluxos no ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</li>
-    <li><strong>E-mail Marketing:</strong> Desenvolvimento, segmentação e otimização de campanhas focadas em performance e conversão.</li>
-    <li><strong>Análise de Dados:</strong> Acompanhamento de métricas, comportamento do usuário e desempenho para decisões estratégicas.</li>
-    <li><strong>Planilhas e Dashboards:</strong> Relatórios e visualizações com Excel, Google Sheets e Looker Studio.</li>
-    <li><strong>CRM e Automação:</strong> Experiência com diversas ferramentas para integrar processos e nutrir leads.</li>
-    <li><strong>Gestão de Equipes:</strong> Liderança de times de suporte e pós-venda, com foco em eficiência e resultados.</li>
-    <li><em>E estou sempre aprimorando minhas habilidades em plataformas de infoprodutos e automação, estudando SQL e expandindo meu conhecimento em Make e rastreamento de dados.</em></li>
-  </ul>
+    <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
+    <ul class="default-list"> <li><strong>Plataformas de Conteúdo:</strong> Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</li>
+        <li><strong>Automação e Marketing:</strong> Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</li>
+        <li><strong>E-mail Marketing:</strong> Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</li>
+        <li><strong>Análise de Dados:</strong> Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</li>
+        <li><strong>Planilhas e Dashboards:</strong> Criação de relatórios em Excel, Google Sheets e Looker Studio.</li>
+        <li><strong>CRM e Automação:</strong> Atuação com diversas ferramentas para integração de processos e nutrição de leads.</li>
+        <li><strong>Gestão de Equipes:</strong> Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</li>
+        <li><em>Estou sempre aprimorando minhas habilidades em plataformas de infoprodutos, automação, SQL, Make e rastreamento de dados.</em></li>
+    </ul>
 </section>
 
 <section class="contact">
-  <h2>📞 Vamos conversar?</h2>
-  <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
-  <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
-  <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-  <div class="buttons">
-    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Acesse Meu Currículo Aqui</a>
-    <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
-  </div>
+    <h2>📞 Vamos conversar?</h2>
+    <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
+    <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
+    <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
+    <div class="buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Acesse Meu Currículo Aqui</a>
+        <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
+    </div>
 </section>
 
 <footer>
-  &copy; 2025 Alec Cantuária - Todos os direitos reservados.
+    &copy; 2025 Alec Cantuária - Todos os direitos reservados.
 </footer>
 
-<!-- Linha de automação — manter intacta -->
 <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
 
 </body>
