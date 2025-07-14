@@ -391,5 +391,19 @@
   });
 })();
 </script>
+
+<script>
+// Rastrear clique no currículo no Google Analytics
+const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
+curriculoLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    gtag('event', 'curriculo_download', {
+      event_category: 'Curriculo',
+      event_label: this.href
+    });
+  });
+});
+</script>
+
 </body>
 </html>
