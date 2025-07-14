@@ -34,30 +34,65 @@
             max-width: 700px;
         }
 
-        .buttons {
-            margin-top: 30px;
-        }
-
-        .buttons a {
-            display: inline-block;
+        /* Estilo base para todos os botões (links transformados em botões) */
+        .btn {
+            display: inline-flex;
+            align-items: center;
             margin: 0.5rem;
             padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
             font-size: 1rem;
-            transition: transform 0.2s ease, background-color 0.2s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            white-space: nowrap; /* Impede que o texto quebre */
         }
 
-        .buttons a:hover,
-        .buttons a:focus {
-            background-color: #0056b3;
+        .btn .icon {
+            margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+        }
+
+        /* Botões primários (azul marinho - header e contact section) */
+        .btn-primary {
+            background-color: #007bff; /* Azul padrão */
+            color: white;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #0056b3; /* Azul mais escuro no hover */
             transform: translateY(-2px);
             outline: none;
         }
+
+        /* Botão secundário (branco - experiences section) */
+        .btn-secondary {
+            background-color: white;
+            color: #007bff; /* Texto azul */
+            border: 1px solid #007bff; /* Borda azul para destaque */
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #e0e0e0; /* Cinza claro no hover */
+            color: #0056b3; /* Texto azul mais escuro no hover */
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        /* Classes para containers de botões */
+        .header-buttons,
+        .contact-buttons {
+            margin-top: 30px;
+            text-align: center; /* Centraliza os botões */
+        }
+
+        .experiences-button-container {
+            margin-top: 20px;
+            text-align: left; /* Alinha este botão à esquerda */
+        }
+
 
         section {
             max-width: 900px;
@@ -125,6 +160,7 @@
             margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
         }
 
+
         .contact {
             text-align: center;
             padding: 30px 20px;
@@ -143,32 +179,6 @@
             border-top: 1px solid #ddd;
         }
 
-        /* Estilo para o botão "Ver meu currículo completo" dentro da seção de experiências */
-        .experiences-section .button-container {
-            text-align: left; /* Alinha o botão à esquerda, como na imagem */
-            margin-top: 20px; /* Espaçamento superior */
-        }
-        .experiences-section .button-container .btn-link {
-            display: inline-flex; /* Para alinhar o ícone com o texto */
-            align-items: center;
-            background-color: #007bff; /* Cor azul */
-            color: white;
-            padding: 10px 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .experiences-section .button-container .btn-link .icon {
-            margin-right: 8px; /* Espaçamento entre o ícone e o texto no botão */
-        }
-        .experiences-section .button-container .btn-link:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px); /* Mantém o efeito do hover original */
-        }
-
     </style>
 </head>
 <body>
@@ -178,22 +188,23 @@
     <p class="subtitle">
         Esta página foi criada do zero, só com HTML puro, e integrada a métricas como Google Analytics, Looker Studio e CRM.
     </p>
-    <div class="buttons">
-        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Ver meu currículo</a>
-        <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
+    <div class="header-buttons"> <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
+        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
     </div>
 </header>
 
 <section>
     <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
-    <ul class="default-list"> <li><strong>Automação inteligente com propósito:</strong> Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</li>
+    <ul class="default-list">
+        <li><strong>Automação inteligente com propósito:</strong> Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</li>
         <li><strong>Análise e decisão baseada em dados:</strong> Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</li>
         <li><strong>Execução ágil com visão estratégica:</strong> Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</li>
         <li><strong>Perfil comprometido e confiável:</strong> Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</li>
     </ul>
 </section>
 
-<section class="experiences-section"> <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
+<section class="experiences-section">
+    <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
     <ul>
         <li>
             <span class="check-icon">✔</span>
@@ -217,8 +228,7 @@
             </div>
         </li>
     </ul>
-    <div class="button-container">
-        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn-link">
+    <div class="experiences-button-container"> <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
             <span class="icon">📄</span> Ver meu currículo completo
         </a>
     </div>
@@ -226,7 +236,8 @@
 
 <section>
     <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
-    <ul class="default-list"> <li><strong>Plataformas de Conteúdo:</strong> Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</li>
+    <ul class="default-list">
+        <li><strong>Plataformas de Conteúdo:</strong> Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</li>
         <li><strong>Automação e Marketing:</strong> Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</li>
         <li><strong>E-mail Marketing:</strong> Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</li>
         <li><strong>Análise de Dados:</strong> Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</li>
@@ -243,9 +254,8 @@
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
     <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
     <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-    <div class="buttons">
-        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank">📄 Acesse Meu Currículo Aqui</a>
-        <a href="https://wa.me/5561998200043" target="_blank">💬 Fale comigo no WhatsApp</a>
+    <div class="contact-buttons"> <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
+        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
     </div>
 </section>
 
