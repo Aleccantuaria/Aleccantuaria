@@ -493,8 +493,9 @@ curriculoLinks.forEach(link => {
   const chatBody = document.getElementById('chat-body');
   const form = document.getElementById('chat-form');
   const input = document.getElementById('user-input');
-  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU'; // Sem espaço no final
-  const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
+  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
+
 
   function appendMessage(text, isUser){
     const p = document.createElement('p');
