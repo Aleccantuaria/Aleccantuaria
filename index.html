@@ -466,97 +466,99 @@ curriculoLinks.forEach(link => {
     });
   });
 });
+</script>
+
 <div id="ai-chatbot">
-      <header>Chat IA Do Alec</header>
-      <div class="chat-body" id="chat-body"></div>
-      <form id="chat-form">
-          <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
-          <button type="submit">Enviar</button>
-      </form>
-  </div>
+  <header>Chat IA Do Alec</header>
+  <div class="chat-body" id="chat-body"></div>
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
 
-  <script>
-  (function(){
-      const chatBody = document.getElementById('chat-body');
-      const form = document.getElementById('chat-form');
-      const input = document.getElementById('user-input');
+<script>
+(function(){
+  const chatBody = document.getElementById('chat-body');
+  const form = document.getElementById('chat-form');
+  const input = document.getElementById('user-input');
 
-      const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-      const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
+  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+  const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
 
-      let chatHistory = [];
+  let chatHistory = [];
 
-      function appendMessage(text, isUser){
-          const p = document.createElement('p');
-          p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
-          p.className = isUser ? 'user-msg' : 'bot-msg';
-          chatBody.appendChild(p);
-          chatBody.scrollTop = chatBody.scrollHeight;
-      }
+  function appendMessage(text, isUser){
+    const p = document.createElement('p');
+    p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
+    p.className = isUser ? 'user-msg' : 'bot-msg';
+    chatBody.appendChild(p);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
 
-      async function fetchAIResponse(promptText){
-          try{
-              const systemInstruction = {
-                  role: "user",
-                  parts: [{
-                      text: "Você é AlecBot, assistente virtual criado por Alec Cantuária, especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda de forma clara, amigável e profissional, usando AIDA sutilmente."
-                  }]
-              };
+  async function fetchAIResponse(promptText){
+    try{
+      const systemInstruction = {
+        role: "user",
+        parts: [{
+          text: "Você é AlecBot, assistente virtual criado por Alec Cantuária, especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda de forma clara, amigável e profissional, usando AIDA sutilmente."
+        }]
+      };
 
-              chatHistory.push({
-                  role: "user",
-                  parts: [{ text: promptText }]
-              });
-
-              const requestBody = {
-                  contents: [systemInstruction, ...chatHistory]
-              };
-
-              const res = await fetch(API_URL, {
-                  method: 'POST',
-                  headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify(requestBody)
-              });
-
-              if(!res.ok) throw new Error(`Erro ${res.status}: ${res.statusText}`);
-
-              const data = await res.json();
-
-              const aiResponseText = data.candidates[0]?.content?.parts[0]?.text || 'Sem resposta da IA';
-
-              chatHistory.push({
-                  role: "model",
-                  parts: [{ text: aiResponseText }]
-              });
-
-              return aiResponseText;
-
-          } catch(e){
-              console.error("Erro na API:", e);
-              return 'Desculpe, não consegui conectar à IA. Tente novamente mais tarde.';
-          }
-      }
-
-      form.addEventListener('submit', async e => {
-          e.preventDefault();
-          const question = input.value.trim();
-          if(!question) return;
-
-          appendMessage(question, true);
-          input.value = '';
-
-          const thinking = document.createElement('p');
-          thinking.textContent = 'IA: Pensando...';
-          thinking.className = 'bot-msg thinking';
-          chatBody.appendChild(thinking);
-          chatBody.scrollTop = chatBody.scrollHeight;
-
-          const response = await fetchAIResponse(question);
-
-          chatBody.removeChild(thinking);
-          appendMessage(response, false);
+      chatHistory.push({
+        role: "user",
+        parts: [{ text: promptText }]
       });
-  })();
-  </script>
+
+      const requestBody = {
+        contents: [systemInstruction, ...chatHistory]
+      };
+
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(requestBody)
+      });
+
+      if(!res.ok) throw new Error(`Erro ${res.status}: ${res.statusText}`);
+
+      const data = await res.json();
+
+      const aiResponseText = data.candidates[0]?.content?.parts[0]?.text || 'Sem resposta da IA.';
+
+      chatHistory.push({
+        role: "model",
+        parts: [{ text: aiResponseText }]
+      });
+
+      return aiResponseText;
+
+    } catch(e){
+      console.error("Erro na API:", e);
+      return 'Desculpe, não consegui conectar à IA. Tente novamente mais tarde.';
+    }
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if(!question) return;
+
+    appendMessage(question, true);
+    input.value = '';
+
+    const thinking = document.createElement('p');
+    thinking.textContent = 'IA: Pensando...';
+    thinking.className = 'bot-msg thinking';
+    chatBody.appendChild(thinking);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    const response = await fetchAIResponse(question);
+
+    chatBody.removeChild(thinking);
+    appendMessage(response, false);
+  });
+})();
+</script>
 </body>
 </html>
