@@ -1,226 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6CFC355VH');
+  </script>
 
-  gtag('config', 'G-P6CFC355VH');
-</script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alec Cantuária - Customer Success</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        background-color: #f9fafa; /* Mantido o cinza claro original para o fundo do body */
-        color: #333;
-        line-height: 1.6;
-    }
-
-    header {
-        background-color: #001f3f; /* Azul marinho */
-        color: #ffffff;
-        padding: 80px 20px;
-        text-align: center;
-        position: relative;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-    }
-
-    header p.subtitle {
-        font-size: 1.2em;
-        color: #ffffff;
-        margin: 0 auto;
-        max-width: 700px;
-    }
-
-    /* Seta para rolar a página com acessibilidade */
-    .scroll-down-arrow {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2em;
-        color: #fff;
-        text-decoration: none;
-        animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
-    }
-
-    /* Estilo base para todos os botões (links transformados em botões) */
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        margin: 0.5rem;
-        padding: 12px 24px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        white-space: nowrap; /* Impede que o texto do botão quebre */
-    }
-
-    .btn .icon {
-        margin-right: 8px; /* Espaçamento entre o ícone e o texto */
-    }
-
-    /* Botões primários (azul marinho - header e contact section) */
-    .btn-primary {
-        background-color: #001f3f; /* AZUL MARINHO */
-        color: white;
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus {
-        background-color: #00152b; /* Azul marinho mais escuro no hover */
-        transform: translateY(-2px);
-        outline: none;
-    }
-
-    /* Botão secundário (branco - experiences section) */
-    .btn-secondary {
-        background-color: white;
-        color: #001f3f; /* Texto azul marinho */
-        border: 1px solid #001f3f; /* Borda azul marinho para destaque */
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus {
-        background-color: #e0e0e0; /* Cinza claro no hover */
-        color: #00152b; /* Texto azul marinho mais escuro no hover */
-        transform: translateY(-2px);
-        outline: none;
-    }
-
-    /* Classes para containers de botões */
-    .header-buttons,
-    .contact-buttons {
-        margin-top: 30px;
-        text-align: center; /* Centraliza os botões */
-    }
-
-    .experiences-button-container {
-        margin-top: 20px;
-        text-align: left; /* Alinha este botão à esquerda */
-    }
-
-
-    section {
-        max-width: 900px;
-        margin: 60px auto;
-        background: #fff;
-        border-radius: 8px;
-        padding: 30px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-        color: #001f3f;
-        margin-top: 0;
-        display: flex; /* Para alinhar ícones nos títulos */
-        align-items: center;
-    }
-
-    /* Estilo para ícones em títulos */
-    h2 .title-icon {
-        margin-right: 10px;
-        font-size: 1.2em;
-        color: #001f3f; /* Cor do título */
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    /* Estilo para as listas com checks padrão (O que eu entrego, Minha caixa de ferramentas) */
-    .default-list li {
-        padding: 8px 0;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .default-list li::before {
-        content: '✔';
-        margin-right: 10px;
-        color: #28a745;
-        font-size: 1.2em;
-        flex-shrink: 0; /* Impede que o ícone encolha */
-    }
-
-    /* Estilo para os itens da caixa de ferramentas para melhor alinhamento */
-    .default-list li .item-content {
-        display: flex;
-        flex-wrap: wrap; /* Permite que o texto quebre para a próxima linha */
-        align-items: baseline; /* Alinha o texto base com o título */
-        flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
-    }
-
-    .default-list li .item-content strong {
-        margin-right: 5px; /* Pequeno espaço entre o título e a descrição */
-        white-space: nowrap; /* Garante que o título não quebre, se possível */
-    }
-
-
-    /* Estilo específico para a seção de Experiências */
-    .experiences-section ul li {
-        padding: 8px 0;
-        display: flex; /* Habilita flexbox para alinhar o ícone e o conteúdo */
-        align-items: flex-start; /* Alinha o topo do ícone com o topo do texto */
-    }
-
-    .experiences-section .check-icon {
-        color: #28a745; /* Cor verde para o check */
-        font-size: 1.2em; /* Tamanho do check */
-        margin-right: 10px; /* Espaçamento entre o check e o texto */
-        flex-shrink: 0; /* Impede que o ícone encolha */
-    }
-
-    .experiences-section .experience-content {
-        /* flex-grow: 1; Removido pois não é estritamente necessário e pode causar quebras indesejadas */
-    }
-
-    .experiences-section strong {
-        display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
-        margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
-    }
-
-
-    .contact {
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .contact p {
-        margin: 8px 0;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        color: #777;
-        font-size: 0.85em;
-        background-color: #f9fafa;
-        border-top: 1px solid #ddd;
-    }
-
-    /* Estilos para a Seção de IA */
-    #ia-demonstracao {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alec Cantuária - Customer Success</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background-color: #f9fafa;
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background-color: #001f3f;
+        color: #ffffff;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+    }
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    header p.subtitle {
+        font-size: 1.2em;
+        margin: 0 auto;
+        max-width: 700px;
+    }
+    .scroll-down-arrow {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        margin: 0.5rem;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        white-space: nowrap;
+    }
+    .btn .icon { margin-right: 8px; }
+    .btn-primary {
+        background-color: #001f3f;
+        color: white;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #00152b;
+        transform: translateY(-2px);
+        outline: none;
+    }
+    .btn-secondary {
+        background-color: white;
+        color: #001f3f;
+        border: 1px solid #001f3f;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+        background-color: #e0e0e0;
+        color: #00152b;
+        transform: translateY(-2px);
+        outline: none;
+    }
+    .header-buttons, .contact-buttons {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .experiences-button-container {
+        margin-top: 20px;
+        text-align: left;
+    }
+    section {
         max-width: 900px;
         margin: 60px auto;
         background: #fff;
@@ -228,367 +105,181 @@
         padding: 30px 20px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-
-    #ia-demonstracao h2 .title-icon {
-        color: #001f3f; /* Mantém a cor azul marinho para o ícone do título da IA */
-    }
-
-    #chatContainer {
-        height: 300px;
-        overflow-y: auto;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 20px;
-        background-color: #fcfcfc;
+    h2 {
+        color: #001f3f;
+        margin-top: 0;
         display: flex;
-        flex-direction: column-reverse; /* Novas mensagens aparecem embaixo */
+        align-items: center;
     }
-
-    .chat-message {
-        margin-bottom: 10px;
-        padding: 8px 12px;
-        border-radius: 15px;
-        max-width: 80%;
-        word-wrap: break-word;
-        line-height: 1.4;
+    h2 .title-icon { margin-right: 10px; font-size: 1.2em; }
+    ul { list-style: none; padding: 0; }
+    .default-list li {
+        padding: 8px 0;
+        display: flex;
+        align-items: flex-start;
     }
-
-    .user-message {
-        background-color: #001f3f; /* Azul marinho do seu site */
-        color: white;
-        align-self: flex-end;
-        margin-left: auto; /* Alinha à direita */
+    .default-list li::before {
+        content: '✔';
+        margin-right: 10px;
+        color: #28a745;
+        font-size: 1.2em;
+        flex-shrink: 0;
     }
-
-    .ai-message {
-        background-color: #e0e0e0; /* Cinza claro para as respostas da IA */
-        color: #333;
-        align-self: flex-start;
-        margin-right: auto; /* Alinha à esquerda */
-    }
-
-    #typingMessage {
-        background-color: #f0f8ff; /* Um azul bem claro para "digitando..." */
-        color: #555;
-    }
-
-    #userInput {
+    .default-list li .item-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
         flex-grow: 1;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        resize: vertical;
     }
-
-    #sendToAI {
-        background-color: #6a1b9a; /* Um tom de roxo ou similar, para diferenciar do azul primário */
-        align-self: flex-end;
-        margin: 0; /* Remove a margem padrão do .btn para melhor alinhamento com flex */
+    .default-list li .item-content strong {
+        margin-right: 5px;
+        white-space: nowrap;
     }
-
-    #sendToAI:hover,
-    #sendToAI:focus {
-        background-color: #5a148a; /* Tom mais escuro no hover */
-    }
-
-    /* Estilo para o container do input e botão */
-    .ai-input-container {
+    .experiences-section ul li {
+        padding: 8px 0;
         display: flex;
-        gap: 10px;
+        align-items: flex-start;
     }
-
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    .experiences-section .check-icon {
+        color: #28a745;
+        font-size: 1.2em;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    .contact {
+        text-align: center;
+        padding: 30px 20px;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 0.85em;
+        background-color: #f9fafa;
+        border-top: 1px solid #ddd;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
 <header>
-    <h1>Alec Cantuária</h1>
-   <p class="subtitle">
-    Esta página foi criada do zero só com HTML puro, para mostrar na prática, como unir <strong>automação</strong>, <strong>métricas</strong> e <strong>CRM</strong> em um só lugar. Cada visita é monitorada pelo <strong>Google Analytics</strong> e <strong>Looker Studio</strong>, enquanto um <strong>webhook</strong> envia dados e UTMs para uma planilha de testes.
-</p>
-    <div class="header-buttons">
-        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
-        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
-    </div>
-    <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
+  <h1>Alec Cantuária</h1>
+  <p class="subtitle">
+    Esta página foi criada do zero só com HTML puro, para mostrar na prática como unir <strong>automação</strong>, <strong>métricas</strong> e <strong>CRM</strong> em um só lugar.
+  </p>
+  <div class="header-buttons">
+    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
+    <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
+  </div>
+  <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
 </header>
 
-<section id="o-que-eu-entrego"> <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
-    <ul class="default-list">
-        <li>
-            <div class="item-content">
-                <strong>Automação inteligente com propósito:</strong>
-                <span>Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Análise e decisão baseada em dados:</strong>
-                <span>Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Execução ágil com visão estratégica:</strong>
-                <span>Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Perfil comprometido e confiável:</strong>
-                <span>Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</span>
-            </div>
-        </li>
-    </ul>
+<section id="o-que-eu-entrego">
+  <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
+  <ul class="default-list">
+    <li><div class="item-content"><strong>Automação inteligente:</strong><span>Integro CRM, e-mail, WhatsApp e dados em jornadas personalizadas.</span></div></li>
+    <li><div class="item-content"><strong>Decisão baseada em dados:</strong><span>Monitoro comportamento e métricas-chave.</span></div></li>
+    <li><div class="item-content"><strong>Execução ágil:</strong><span>Planejo e implemento projetos de ponta a ponta.</span></div></li>
+    <li><div class="item-content"><strong>Perfil comprometido:</strong><span>Reconhecido por dedicação e foco em soluções.</span></div></li>
+  </ul>
 </section>
 
 <section class="experiences-section">
-    <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
-    <ul>
-        <li>
-            <span class="check-icon">✔</span>
-            <div class="experience-content">
-                <strong>Supervisor de Pós-Venda – Evoluna</strong>
-                <p>Liderança de equipe, execução e otimização de jornadas digitais com dados, CRM e automação multicanal com traqueamento de dados.</p>
-            </div>
-        </li>
-        <li>
-            <span class="check-icon">✔</span>
-            <div class="experience-content">
-                <strong>Founding Sales Ops – Fluida</strong>
-                <p>Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</p>
-            </div>
-        </li>
-        <li>
-            <span class="check-icon">✔</span>
-            <div class="experience-content">
-                <strong>SDR & Gestor de Tráfego – Mynt</strong>
-                <p>Captação, qualificação de leads e campanhas de mídia paga.</p>
-            </div>
-        </li>
-    </ul>
-    <div class="experiences-button-container">
-        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
-            <span class="icon">📄</span> Ver meu currículo completo
-        </a>
-    </div>
+  <h2><span class="title-icon">💼</span> Experiências</h2>
+  <ul>
+    <li><span class="check-icon">✔</span><div><strong>Supervisor de Pós-Venda – Evoluna</strong><p>Liderança de equipe e automação multicanal.</p></div></li>
+    <li><span class="check-icon">✔</span><div><strong>Founding Sales Ops – Fluida</strong><p>Estruturação comercial e processos de Social Selling.</p></div></li>
+    <li><span class="check-icon">✔</span><div><strong>SDR & Gestor de Tráfego – Mynt</strong><p>Captação de leads e mídia paga.</p></div></li>
+  </ul>
+  <div class="experiences-button-container">
+    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
+      <span class="icon">📄</span> Ver meu currículo completo
+    </a>
+  </div>
 </section>
 
-<section id="ia-demonstracao">
-    <h2><span class="title-icon">✨</span> Fale com a IA (Google Gemini)</h2>
-    <p>Experimente o poder do Google Gemini. Digite sua pergunta abaixo e veja a IA responder!</p>
-
-    <div id="chatContainer">
-        <p style="text-align: center; color: #888; font-style: italic;">Inicie a conversa!</p>
-    </div>
-
-    <div class="ai-input-container">
-        <textarea id="userInput" placeholder="Digite sua pergunta aqui..." rows="2"></textarea>
-        <button id="sendToAI" class="btn btn-primary">Enviar</button>
-    </div>
-    
-    <p style="font-size: 0.8em; color: #888; margin-top: 10px;">Esta funcionalidade utiliza integração via Make.com e Google Gemini API para demonstração.</p>
-</section>
 <section>
-    <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
-    <ul class="default-list">
-        <li>
-            <div class="item-content">
-                <strong>Plataformas de Conteúdo:</strong>
-                <span>Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Automação e Marketing:</strong>
-                <span>Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>E-mail Marketing:</strong>
-                <span>Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Análise de Dados:</strong>
-                <span>Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Planilhas e Dashboards:</strong>
-                <span>Criação de relatórios em Excel, Google Sheets e Looker Studio.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>CRM e Automação:</strong>
-                <span>Atuação com diversas ferramentas para integração de processos e nutrição de leads.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <strong>Gestão de Equipes:</strong>
-                <span>Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</span>
-            </div>
-        </li>
-        <li>
-            <div class="item-content">
-                <em>Estou sempre aprimorando minhas habilidades em plataformas de Infoprodutos, automação, SQL, Make e rastreamento de dados.</em>
-            </div>
-        </li>
-    </ul>
+  <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
+  <ul class="default-list">
+    <li><div class="item-content"><strong>Plataformas de Conteúdo:</strong><span>Hotmart, Nutror, HeroSpark.</span></div></li>
+    <li><div class="item-content"><strong>Automação e Marketing:</strong><span>ManyChat, UTMs, redirecionamentos.</span></div></li>
+    <li><div class="item-content"><strong>E-mail Marketing:</strong><span>Segmentação e campanhas de conversão.</span></div></li>
+    <li><div class="item-content"><strong>Análise de Dados:</strong><span>Métricas e performance.</span></div></li>
+    <li><div class="item-content"><strong>Planilhas e Dashboards:</strong><span>Excel, Google Sheets, Looker Studio.</span></div></li>
+    <li><div class="item-content"><strong>CRM e Automação:</strong><span>Integração de processos e nutrição de leads.</span></div></li>
+    <li><div class="item-content"><strong>Gestão de Equipes:</strong><span>Liderança com foco em resultados.</span></div></li>
+  </ul>
 </section>
 
 <section class="contact">
-    <h2>📞 Vamos conversar?</h2>
-    <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
-    <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
-    <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-    <div class="contact-buttons">
-        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
-        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
-    </div>
+  <h2>📞 Vamos conversar?</h2>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank">Alec Cantuária</a></p>
+  <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
+  <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
+  <div class="contact-buttons">
+    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo</a>
+    <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 WhatsApp</a>
+  </div>
 </section>
 
 <footer>
-    &copy; 2025 Alec Cantuária - Todos os direitos reservados.
+  &copy; 2025 Alec Cantuária - Todos os direitos reservados.
 </footer>
 
-<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
-
+<!-- AQUI COMEÇA O CHATBOT GEMINI -->
+<style>
+  #ai-chatbot{position:fixed;bottom:20px;right:20px;width:320px;max-width:90vw;background:#fff;border:2px solid #001f3f;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:'Inter',sans-serif;z-index:9999}
+  #ai-chatbot header{background:#001f3f;color:#fff;padding:10px;font-weight:700;font-size:1.1em;border-radius:6px 6px 0 0}
+  #ai-chatbot .chat-body{max-height:250px;overflow-y:auto;padding:10px;font-size:.9em}
+  #ai-chatbot .chat-body p{margin:6px 0}
+  #ai-chatbot .user-msg{color:#001f3f;font-weight:600}
+  #ai-chatbot .bot-msg{color:#28a745}
+  #ai-chatbot form{display:flex;border-top:1px solid #ddd}
+  #ai-chatbot input{flex-grow:1;border:none;padding:10px;font-size:1em}
+  #ai-chatbot button{background:#001f3f;color:#fff;border:none;padding:0 15px;cursor:pointer}
+  #ai-chatbot button:disabled{background:#555;cursor:not-allowed}
+</style>
+<div id="ai-chatbot">
+  <header>Chat IA Gemini</header>
+  <div class="chat-body" id="chat-body"></div>
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
 <script>
-(function() {
-  function getUTM(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param) || "";
-  }
-
-  const payload = {
-    timestamp: new Date().toISOString(),
-    url: window.location.href,
-    referrer: document.referrer,
-    userAgent: navigator.userAgent,
-    utm_source: getUTM('utm_source'),
-    utm_medium: getUTM('utm_medium'),
-    utm_campaign: getUTM('utm_campaign')
-  };
-
-  fetch("https://hook.us2.make.com/ny9g5tyeh1m6aobpt4ynpwdrt3gsblf4", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
+(function(){
+  const chatBody=document.getElementById('chat-body');
+  const form=document.getElementById('chat-form');
+  const input=document.getElementById('user-input');
+  const API_KEY='AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+  const API_URL='https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+API_KEY;
+  function appendMessage(text,isUser){const p=document.createElement('p');p.textContent=(isUser?'Você: ':'IA: ')+text;p.className=isUser?'user-msg':'bot-msg';chatBody.appendChild(p);chatBody.scrollTop=chatBody.scrollHeight}
+  async function fetchAIResponse(promptText){
+    try{
+      const res=await fetch(API_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({"contents":[{"parts":[{"text":promptText}]}]})
+      });
+      if(!res.ok)throw new Error('Erro: '+res.status);
+      const data=await res.json();
+      return data.candidates[0].content||'Sem resposta.';
+    }catch(e){return 'Erro ao conectar.'}
+  }
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const q=input.value.trim();
+    if(!q)return;
+    appendMessage(q,true);
+    input.value='';
+    appendMessage('Pensando...');
+    const r=await fetchAIResponse(q);
+    chatBody.removeChild(chatBody.lastChild);
+    appendMessage(r,false);
+  });
 })();
 </script>
-
-<script>
-    const chatContainer = document.getElementById('chatContainer');
-    const userInput = document.getElementById('userInput');
-    const sendToAIButton = document.getElementById('sendToAI');
-
-    // **SUA URL DO WEBHOOK DA IA AQUI - VERIFIQUE SE ESTÁ CORRETA NO MAKE.COM**
-    const MAKE_WEBHOOK_URL_AI = "https://hook.us2.make.com/zxmxtimui8dxqfcw0lqlnh1k2fa9om9i"; 
-
-    // Função para adicionar uma mensagem ao chat
-    function addMessageToChat(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('chat-message'); // Adiciona a classe base
-        
-        if (sender === 'user') {
-            messageDiv.classList.add('user-message');
-            messageDiv.textContent = `Você: ${text}`;
-        } else { // sender === 'ai'
-            messageDiv.classList.add('ai-message');
-            messageDiv.textContent = `IA: ${text}`;
-        }
-        chatContainer.prepend(messageDiv); // Adiciona no início para aparecer embaixo (column-reverse)
-        chatContainer.scrollTop = chatContainer.scrollHeight; // Rola para o final do chat
-    }
-
-    // Event Listener para o botão "Enviar"
-    sendToAIButton.addEventListener('click', async () => {
-        const question = userInput.value.trim();
-
-        if (question === "") {
-            return; // Não adiciona mensagem vazia ao chat
-        }
-
-        addMessageToChat(question, 'user'); // Adiciona a pergunta do usuário ao chat
-        userInput.value = ''; // Limpa o campo de texto
-        sendToAIButton.disabled = true; // Desabilita o botão
-
-        // Adiciona a mensagem "Digitando..."
-        const typingMessageDiv = document.createElement('div');
-        typingMessageDiv.id = 'typingMessage'; // Adiciona um ID para facilitar a remoção
-        typingMessageDiv.classList.add('chat-message', 'ai-message'); // Classes para estilo
-        typingMessageDiv.textContent = 'IA: Digitando...';
-        chatContainer.prepend(typingMessageDiv);
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-
-        try {
-            // Envia a pergunta do usuário para o Webhook do Make.com
-            const response = await fetch(MAKE_WEBHOOK_URL_AI, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    prompt: question // O Make.com receberá isso como 'prompt'
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
-            }
-
-            const data = await response.json(); // Espera a resposta JSON do Webhook Response do Make
-
-            // Remove a mensagem "Digitando..." antes de adicionar a resposta final
-            const existingTypingMessage = document.getElementById('typingMessage');
-            if (existingTypingMessage) {
-                existingTypingMessage.remove();
-            }
-
-            if (data && data.gemini_response) {
-                addMessageToChat(data.gemini_response, 'ai'); // Adiciona a resposta da IA
-            } else {
-                addMessageToChat("Não foi possível obter uma resposta da IA. Tente novamente.", 'ai');
-            }
-
-        } catch (error) {
-            console.error("Erro ao comunicar com a IA:", error);
-            // Remove a mensagem "Digitando..." em caso de erro também
-            const existingTypingMessage = document.getElementById('typingMessage');
-            if (existingTypingMessage) {
-                existingTypingMessage.remove();
-            }
-            addMessageToChat("Ocorreu um erro ao conectar com a IA. Por favor, tente mais tarde.", 'ai');
-        } finally {
-            sendToAIButton.disabled = false; // Habilita o botão novamente
-        }
-    });
-</script>
-<script>
-// Rastrear clique no currículo no Google Analytics
-const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
-curriculoLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    gtag('event', 'curriculo_download', {
-      event_category: 'Curriculo',
-      event_label: this.href
-    });
-  });
-});
-</script>
-
+<!-- FIM DO CHATBOT -->
 </body>
 </html>
