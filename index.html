@@ -1,234 +1,287 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P8KRV66L');</script>
-<!-- End Google Tag Manager -->
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P6CFC355VH');
-</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P8KRV66L');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6CFC355VH');
+  </script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alec Cantuária - Customer Success</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        background-color: #f9fafa; /* Mantido o cinza claro original para o fundo do body */
-        color: #333;
-        line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9fafa;
+      color: #333;
+      line-height: 1.6;
     }
-
     header {
-        background-color: #001f3f; /* Azul marinho */
-        color: #ffffff;
-        padding: 80px 20px;
-        text-align: center;
-        position: relative;
+      background-color: #001f3f;
+      color: #ffffff;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
     }
-
     header h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-
     header p.subtitle {
-        font-size: 1.2em;
-        color: #ffffff;
-        margin: 0 auto;
-        max-width: 700px;
+      font-size: 1.2em;
+      color: #ffffff;
+      margin: 0 auto;
+      max-width: 700px;
     }
-
-    /* Seta para rolar a página com acessibilidade */
     .scroll-down-arrow {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2em;
-        color: #fff;
-        text-decoration: none;
-        animation: bounce 2s infinite;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em;
+      color: #fff;
+      text-decoration: none;
+      animation: bounce 2s infinite;
     }
     @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
     }
-
-    /* Estilo base para todos os botões (links transformados em botões) */
     .btn {
-        display: inline-flex;
-        align-items: center;
-        margin: 0.5rem;
-        padding: 12px 24px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        white-space: nowrap; /* Impede que o texto do botão quebre */
+      display: inline-flex;
+      align-items: center;
+      margin: 0.5rem;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      white-space: nowrap;
     }
-
     .btn .icon {
-        margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+      margin-right: 8px;
     }
-
-    /* Botões primários (azul marinho - header e contact section) */
     .btn-primary {
-        background-color: #001f3f; /* AZUL MARINHO */
-        color: white;
+      background-color: #001f3f;
+      color: white;
     }
-
     .btn-primary:hover,
     .btn-primary:focus {
-        background-color: #00152b; /* Azul marinho mais escuro no hover */
-        transform: translateY(-2px);
-        outline: none;
+      background-color: #00152b;
+      transform: translateY(-2px);
+      outline: none;
     }
-
-    /* Botão secundário (branco - experiences section) */
     .btn-secondary {
-        background-color: white;
-        color: #001f3f; /* Texto azul marinho */
-        border: 1px solid #001f3f; /* Borda azul marinho para destaque */
+      background-color: white;
+      color: #001f3f;
+      border: 1px solid #001f3f;
     }
-
     .btn-secondary:hover,
     .btn-secondary:focus {
-        background-color: #e0e0e0; /* Cinza claro no hover */
-        color: #00152b; /* Texto azul marinho mais escuro no hover */
-        transform: translateY(-2px);
-        outline: none;
+      background-color: #e0e0e0;
+      color: #00152b;
+      transform: translateY(-2px);
+      outline: none;
     }
-
-    /* Classes para containers de botões */
     .header-buttons,
     .contact-buttons {
-        margin-top: 30px;
-        text-align: center; /* Centraliza os botões */
+      margin-top: 30px;
+      text-align: center;
     }
-
     .experiences-button-container {
-        margin-top: 20px;
-        text-align: left; /* Alinha este botão à esquerda */
+      margin-top: 20px;
+      text-align: left;
     }
-
-
     section {
-        max-width: 900px;
-        margin: 60px auto;
-        background: #fff;
-        border-radius: 8px;
-        padding: 30px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-
     h2 {
-        color: #001f3f;
-        margin-top: 0;
-        display: flex; /* Para alinhar ícones nos títulos */
-        align-items: center;
+      color: #001f3f;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
     }
-
-    /* Estilo para ícones em títulos */
     h2 .title-icon {
-        margin-right: 10px;
-        font-size: 1.2em;
-        color: #001f3f; /* Cor do título */
+      margin-right: 10px;
+      font-size: 1.2em;
+      color: #001f3f;
     }
-
     ul {
-        list-style: none;
-        padding: 0;
+      list-style: none;
+      padding: 0;
     }
-
-    /* Estilo para as listas com checks padrão (O que eu entrego, Minha caixa de ferramentas) */
     .default-list li {
-        padding: 8px 0;
-        display: flex;
-        align-items: flex-start;
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
     }
-
     .default-list li::before {
-        content: '✔';
-        margin-right: 10px;
-        color: #28a745;
-        font-size: 1.2em;
-        flex-shrink: 0; /* Impede que o ícone encolha */
+      content: '✔';
+      margin-right: 10px;
+      color: #28a745;
+      font-size: 1.2em;
+      flex-shrink: 0;
     }
-
-    /* Estilo para os itens da caixa de ferramentas para melhor alinhamento */
     .default-list li .item-content {
-        display: flex;
-        flex-wrap: wrap; /* Permite que o texto quebre para a próxima linha */
-        align-items: baseline; /* Alinha o texto base com o título */
-        flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      flex-grow: 1;
     }
-
     .default-list li .item-content strong {
-        margin-right: 5px; /* Pequeno espaço entre o título e a descrição */
-        white-space: nowrap; /* Garante que o título não quebre, se possível */
+      margin-right: 5px;
+      white-space: nowrap;
     }
-
-
-    /* Estilo específico para a seção de Experiências */
     .experiences-section ul li {
-        padding: 8px 0;
-        display: flex; /* Habilita flexbox para alinhar o ícone e o conteúdo */
-        align-items: flex-start; /* Alinha o topo do ícone com o topo do texto */
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
     }
-
     .experiences-section .check-icon {
-        color: #28a745; /* Cor verde para o check */
-        font-size: 1.2em; /* Tamanho do check */
-        margin-right: 10px; /* Espaçamento entre o check e o texto */
-        flex-shrink: 0; /* Impede que o ícone encolha */
+      color: #28a745;
+      font-size: 1.2em;
+      margin-right: 10px;
+      flex-shrink: 0;
     }
-
-    .experiences-section .experience-content {
-        /* flex-grow: 1; Removido pois não é estritamente necessário e pode causar quebras indesejadas */
-    }
-
-    .experiences-section strong {
-        display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
-        margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
-    }
-
-
     .contact {
-        text-align: center;
-        padding: 30px 20px;
+      text-align: center;
+      padding: 30px 20px;
     }
-
     .contact p {
-        margin: 8px 0;
+      margin: 8px 0;
     }
-
     footer {
-        text-align: center;
-        padding: 20px;
-        color: #777;
-        font-size: 0.85em;
-        background-color: #f9fafa;
-        border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 0.85em;
+      background-color: #f9fafa;
+      border-top: 1px solid #ddd;
     }
-
+    #ia-demonstracao {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #ia-demonstracao h2 .title-icon {
+      color: #001f3f;
+    }
+    #ai-chatbot {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      overflow: hidden;
+    }
+    #ai-chatbot header {
+      background-color: #001f3f;
+      color: white;
+      padding: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chat-body {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #f9fafa;
+      border-bottom: 1px solid #eee;
+    }
+    .chat-body p {
+      margin: 0;
+      padding: 10px 15px;
+      border-radius: 20px;
+      max-width: 80%;
+      word-wrap: break-word;
+      line-height: 1.5;
+    }
+    .user-msg {
+      background-color: #001f3f;
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 5px;
+    }
+    .bot-msg {
+      background-color: #f0f0f0;
+      color: #333;
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+    .bot-msg.thinking {
+      font-style: italic;
+      color: #777;
+      background-color: #f8f8f8;
+      text-align: center;
+      align-self: center;
+      max-width: fit-content;
+    }
+    #chat-form {
+      display: flex;
+      padding: 15px;
+      gap: 10px;
+    }
+    #user-input {
+      flex-grow: 1;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    #chat-form button {
+      padding: 12px 20px;
+      background-color: #001f3f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    #chat-form button:hover {
+      background-color: #00152b;
+      transform: translateY(-1px);
+    }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -414,233 +467,96 @@ curriculoLinks.forEach(link => {
   });
 });
 <div id="ai-chatbot">
-    <header>Chat IA Do Alec</header>
-    <div class="chat-body" id="chat-body"></div>
-    <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
-        <button type="submit">Enviar</button>
-    </form>
-</div>
+      <header>Chat IA Do Alec</header>
+      <div class="chat-body" id="chat-body"></div>
+      <form id="chat-form">
+          <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
+          <button type="submit">Enviar</button>
+      </form>
+  </div>
 
-<script>
-(function(){
-    const chatBody = document.getElementById('chat-body');
-    const form = document.getElementById('chat-form');
-    const input = document.getElementById('user-input');
+  <script>
+  (function(){
+      const chatBody = document.getElementById('chat-body');
+      const form = document.getElementById('chat-form');
+      const input = document.getElementById('user-input');
 
-    const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-    const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
+      const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+      const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
 
-    let chatHistory = []; // Para manter o contexto da conversa
+      let chatHistory = [];
 
-    function appendMessage(text, isUser){
-        const p = document.createElement('p');
-        p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
-        p.className = isUser ? 'user-msg' : 'bot-msg';
-        chatBody.appendChild(p);
-        // Sempre rolar para o final para ver a mensagem mais recente
-        chatBody.scrollTop = chatBody.scrollHeight; 
-    }
+      function appendMessage(text, isUser){
+          const p = document.createElement('p');
+          p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
+          p.className = isUser ? 'user-msg' : 'bot-msg';
+          chatBody.appendChild(p);
+          chatBody.scrollTop = chatBody.scrollHeight;
+      }
 
-    async function fetchAIResponse(promptText){
-        try{
-            // Limpe o histórico se for uma nova conversa ou se o histórico ficar muito longo
-            // Para testar, você pode comentar esta linha para ver o contexto funcionando
-            // if (chatHistory.length > 10) chatHistory = []; 
+      async function fetchAIResponse(promptText){
+          try{
+              const systemInstruction = {
+                  role: "user",
+                  parts: [{
+                      text: "Você é AlecBot, assistente virtual criado por Alec Cantuária, especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda de forma clara, amigável e profissional, usando AIDA sutilmente."
+                  }]
+              };
 
-            // Instrução inicial para a IA (como um "system prompt")
-            // Esta instrução pode ser ajustada para refinar o comportamento da IA
-            const systemInstruction = {
-                role: "user", // "user" ou "model" pode ser usado para dar instruções iniciais
-                parts: [{ text: "Você é AlecBot, assistente virtual criado por Alec Cantuária, especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda sempre com uma saudação amigável e seja claro, direto e profissional. Use o método AIDA de forma sutil para tornar suas respostas envolventes e persuasivas, sem mencionar as etapas explicitamente. Mantenha as respostas curtas, focadas no essencial, e use linguagem acessível e convidativa.
-" }]
-            };
+              chatHistory.push({
+                  role: "user",
+                  parts: [{ text: promptText }]
+              });
 
-            // Adiciona a pergunta atual do usuário ao histórico (sempre como 'user')
-            chatHistory.push({
-                role: "user",
-                parts: [{ text: promptText }]
-            });
+              const requestBody = {
+                  contents: [systemInstruction, ...chatHistory]
+              };
 
-            // Constrói o corpo da requisição com a instrução e o histórico
-            const requestBody = {
-                contents: [systemInstruction, ...chatHistory]
-            };
+              const res = await fetch(API_URL, {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  body: JSON.stringify(requestBody)
+              });
 
-            const res = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestBody)
-            });
+              if(!res.ok) throw new Error(`Erro ${res.status}: ${res.statusText}`);
 
-            if(!res.ok) throw new Error(`Erro na requisição da API: ${res.status} - ${res.statusText}`);
+              const data = await res.json();
 
-            const data = await res.json();
-            
-            const aiResponseText = data.candidates[0]?.content?.parts[0]?.text || 'Sem resposta. Por favor, tente reformular sua pergunta.';
+              const aiResponseText = data.candidates[0]?.content?.parts[0]?.text || 'Sem resposta da IA';
 
-            // Adiciona a resposta da IA ao histórico
-            chatHistory.push({
-                role: "model",
-                parts: [{ text: aiResponseText }]
-            });
+              chatHistory.push({
+                  role: "model",
+                  parts: [{ text: aiResponseText }]
+              });
 
-            return aiResponseText;
-        }catch(e){
-            console.error("Erro na comunicação com a API:", e);
-            // Retorna uma mensagem de erro mais amigável ao usuário
-            return 'Desculpe, houve um erro ao conectar com a IA. Por favor, tente novamente mais tarde.';
-        }
-    }
+              return aiResponseText;
 
-    form.addEventListener('submit', async e => {
-        e.preventDefault();
-        const q = input.value.trim();
-        if(!q) return;
+          } catch(e){
+              console.error("Erro na API:", e);
+              return 'Desculpe, não consegui conectar à IA. Tente novamente mais tarde.';
+          }
+      }
 
-        appendMessage(q, true); // Adiciona a mensagem do usuário
-        input.value = ''; // Limpa o input
+      form.addEventListener('submit', async e => {
+          e.preventDefault();
+          const question = input.value.trim();
+          if(!question) return;
 
-        // Adiciona a mensagem "Pensando..."
-        const thinkingMessage = document.createElement('p');
-        thinkingMessage.textContent = 'IA: Pensando...';
-        thinkingMessage.className = 'bot-msg thinking';
-        chatBody.appendChild(thinkingMessage);
-        chatBody.scrollTop = chatBody.scrollHeight; // Rola para o final
+          appendMessage(question, true);
+          input.value = '';
 
-        const r = await fetchAIResponse(q); // Obtém a resposta da IA
+          const thinking = document.createElement('p');
+          thinking.textContent = 'IA: Pensando...';
+          thinking.className = 'bot-msg thinking';
+          chatBody.appendChild(thinking);
+          chatBody.scrollTop = chatBody.scrollHeight;
 
-        // Remove a mensagem "Pensando..."
-        chatBody.removeChild(thinkingMessage);
-        appendMessage(r, false); // Adiciona a resposta final da IA
-    });
-})();
-</script>
+          const response = await fetchAIResponse(question);
 
-<style>
-/* Estilos para a Seção de IA */
-#ia-demonstracao { /* Mantido para manter a seção no layout geral */
-    max-width: 900px;
-    margin: 60px auto;
-    background: #fff;
-    border-radius: 8px;
-    padding: 30px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-#ia-demonstracao h2 .title-icon {
-    color: #001f3f; /* Mantém a cor azul marinho para o ícone do título da IA */
-}
-
-/* Novo container do Chatbot para melhor controle de layout */
-#ai-chatbot {
-    width: 100%; /* Ocupa a largura total da seção pai */
-    max-width: 600px; /* Largura máxima para centralizar melhor */
-    margin: 20px auto 0 auto; /* Ajusta a margem para ficar abaixo do título da seção */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    font-family: 'Inter', sans-serif;
-    background-color: #fff;
-    display: flex; /* Usa flexbox para organizar header, body e form */
-    flex-direction: column; /* Organiza em coluna */
-    height: 500px; /* Altura fixa total do chatbot para melhor controle */
-    overflow: hidden; /* Garante que nada transborde */
-}
-
-#ai-chatbot header {
-    background-color: #001f3f; /* Azul marinho do seu header */
-    color: white;
-    padding: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    flex-shrink: 0; /* Impede que o header encolha */
-}
-
-.chat-body {
-    flex-grow: 1; /* Ocupa todo o espaço restante disponível */
-    overflow-y: auto; /* Scroll para mensagens */
-    padding: 15px;
-    display: flex;
-    flex-direction: column; /* Mensagens aparecem de cima para baixo */
-    gap: 10px; /* Espaço entre as mensagens */
-    background-color: #f9fafa;
-    border-bottom: 1px solid #eee;
-}
-
-.chat-body p {
-    margin: 0;
-    padding: 10px 15px;
-    border-radius: 20px;
-    max-width: 80%;
-    word-wrap: break-word;
-    line-height: 1.5;
-}
-
-.user-msg {
-    background-color: #001f3f; /* Azul marinho para mensagens do usuário */
-    color: white;
-    align-self: flex-end; /* Alinha à direita */
-    border-bottom-right-radius: 5px;
-}
-
-.bot-msg {
-    background-color: #f0f0f0; /* Cinza MUITO CLARO para mensagens da IA (quase branco) */
-    color: #333; /* Texto escuro para contraste */
-    align-self: flex-start; /* Alinha à esquerda */
-    border-bottom-left-radius: 5px;
-}
-
-.bot-msg.thinking {
-    font-style: italic;
-    color: #777;
-    background-color: #f8f8f8; /* Um cinza muito claro para "Pensando..." */
-    text-align: center;
-    align-self: center;
-    max-width: fit-content;
-}
-
-#chat-form {
-    display: flex;
-    padding: 15px;
-    gap: 10px;
-    flex-shrink: 0; /* Impede que o formulário encolha */
-}
-
-#user-input {
-    flex-grow: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-}
-
-#chat-form button {
-    padding: 12px 20px;
-    background-color: #001f3f; /* Azul marinho do seu site */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-#chat-form button:hover {
-    background-color: #00152b; /* Azul marinho mais escuro no hover */
-    transform: translateY(-1px);
-}
-</style>
- 
-</style>
+          chatBody.removeChild(thinking);
+          appendMessage(response, false);
+      });
+  })();
+  </script>
 </body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8KRV66L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 </html>
