@@ -487,15 +487,13 @@ curriculoLinks.forEach(link => {
   </form>
 </div>
 
-<!-- Chatbot JS -->
-<script>
 (function(){
   const chatBody = document.getElementById('chat-body');
   const form = document.getElementById('chat-form');
   const input = document.getElementById('user-input');
-  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
 
+  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+  const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + API_KEY;
 
   function appendMessage(text, isUser){
     const p = document.createElement('p');
@@ -505,36 +503,42 @@ const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
- async function fetchAIResponse(promptText){
-  try{
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        "contents": [
-          {
-            "parts": [
-              {
-                "text": "Você é um assistente chamado AlecBot. Quando perguntarem sobre Alec Cantuária, explique que ele é um especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda sempre com clareza e muita simpatia."
-              }
-            ]
-          },
-          {
-            "parts": [
-              { "text": promptText }
-            ]
-          }
-        ]
-      })
-    });
-    if(!res.ok) throw new Error('Erro: ' + res.status);
-    const data = await res.json();
-    return data.candidates[0].content.parts[0].text || 'Sem resposta.';
-  }catch(e){
-    return 'Erro ao conectar.';
+  async function fetchAIResponse(promptText){
+    try{
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          "contents": [
+            {
+              "role": "system",
+              "parts": [
+                {
+                  "text": "Você é um assistente chamado AlecBot. Quando perguntarem sobre Alec Cantuária, explique que ele é um especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda sempre com clareza e simpatia."
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "parts": [
+                { "text": promptText }
+              ]
+            }
+          ]
+        })
+      });
+      if(!res.ok) {
+        console.error("Resposta do servidor:", res);
+        throw new Error('Erro HTTP: ' + res.status);
+      }
+      const data = await res.json();
+      console.log("Resposta completa:", data);
+      return data.candidates[0].content.parts[0].text || 'Sem resposta.';
+    }catch(e){
+      console.error(e);
+      return 'Erro ao conectar.';
+    }
   }
-}
-
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -548,7 +552,8 @@ const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-
     appendMessage(r, false);
   });
 })();
-</script>
+
+
 </body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8KRV66L"
