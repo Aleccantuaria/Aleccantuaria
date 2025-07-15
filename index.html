@@ -504,28 +504,36 @@ curriculoLinks.forEach(link => {
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  async function fetchAIResponse(promptText){
-    try{
-      const res = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          "contents": [
-            {
-              "parts": [
-                { "text": promptText }
-              ]
-            }
-          ]
-        })
-      });
-      if(!res.ok) throw new Error('Erro: ' + res.status);
-      const data = await res.json();
-      return data.candidates[0].content.parts[0].text || 'Sem resposta.';
-    }catch(e){
-      return 'Erro ao conectar.';
-    }
+ async function fetchAIResponse(promptText){
+  try{
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Você é um assistente chamado AlecBot. Quando perguntarem sobre Alec Cantuária, explique que ele é um especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda sempre com clareza e muita simpatia."
+              }
+            ]
+          },
+          {
+            "parts": [
+              { "text": promptText }
+            ]
+          }
+        ]
+      })
+    });
+    if(!res.ok) throw new Error('Erro: ' + res.status);
+    const data = await res.json();
+    return data.candidates[0].content.parts[0].text || 'Sem resposta.';
+  }catch(e){
+    return 'Erro ao conectar.';
   }
+}
+
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
