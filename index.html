@@ -196,3 +196,399 @@
     }
 
     .experiences-section strong {
+        display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
+        margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
+    }
+
+
+    .contact {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .contact p {
+        margin: 8px 0;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 0.85em;
+        background-color: #f9fafa;
+        border-top: 1px solid #ddd;
+    }
+
+    /* Estilos para a Seção de IA */
+    #ia-demonstracao {
+        max-width: 900px;
+        margin: 60px auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 30px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    #ia-demonstracao h2 .title-icon {
+        color: #001f3f; /* Mantém a cor azul marinho para o ícone do título da IA */
+    }
+
+    #chatContainer {
+        height: 300px;
+        overflow-y: auto;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        background-color: #fcfcfc;
+        display: flex;
+        flex-direction: column-reverse; /* Novas mensagens aparecem embaixo */
+    }
+
+    .chat-message {
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        border-radius: 15px;
+        max-width: 80%;
+        word-wrap: break-word;
+        line-height: 1.4;
+    }
+
+    .user-message {
+        background-color: #001f3f; /* Azul marinho do seu site */
+        color: white;
+        align-self: flex-end;
+        margin-left: auto; /* Alinha à direita */
+    }
+
+    .ai-message {
+        background-color: #e0e0e0; /* Cinza claro para as respostas da IA */
+        color: #333;
+        align-self: flex-start;
+        margin-right: auto; /* Alinha à esquerda */
+    }
+
+    #typingMessage {
+        background-color: #f0f8ff; /* Um azul bem claro para "digitando..." */
+        color: #555;
+    }
+
+    #userInput {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        resize: vertical;
+    }
+
+    #sendToAI {
+        background-color: #6a1b9a; /* Um tom de roxo ou similar, para diferenciar do azul primário */
+        align-self: flex-end;
+        margin: 0; /* Remove a margem padrão do .btn para melhor alinhamento com flex */
+    }
+
+    #sendToAI:hover,
+    #sendToAI:focus {
+        background-color: #5a148a; /* Tom mais escuro no hover */
+    }
+
+    /* Estilo para o container do input e botão */
+    .ai-input-container {
+        display: flex;
+        gap: 10px;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h1>Alec Cantuária</h1>
+   <p class="subtitle">
+    Esta página foi criada do zero só com HTML puro, para mostrar na prática, como unir <strong>automação</strong>, <strong>métricas</strong> e <strong>CRM</strong> em um só lugar. Cada visita é monitorada pelo <strong>Google Analytics</strong> e <strong>Looker Studio</strong>, enquanto um <strong>webhook</strong> envia dados e UTMs para uma planilha de testes.
+</p>
+    <div class="header-buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
+        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
+    </div>
+    <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
+</header>
+
+<section id="o-que-eu-entrego"> <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
+    <ul class="default-list">
+        <li>
+            <div class="item-content">
+                <strong>Automação inteligente com propósito:</strong>
+                <span>Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Análise e decisão baseada em dados:</strong>
+                <span>Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Execução ágil com visão estratégica:</strong>
+                <span>Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Perfil comprometido e confiável:</strong>
+                <span>Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</span>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="experiences-section">
+    <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
+    <ul>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>Supervisor de Pós-Venda – Evoluna</strong>
+                <p>Liderança de equipe, execução e otimização de jornadas digitais com dados, CRM e automação multicanal com traqueamento de dados.</p>
+            </div>
+        </li>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>Founding Sales Ops – Fluida</strong>
+                <p>Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</p>
+            </div>
+        </li>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>SDR & Gestor de Tráfego – Mynt</strong>
+                <p>Captação, qualificação de leads e campanhas de mídia paga.</p>
+            </div>
+        </li>
+    </ul>
+    <div class="experiences-button-container">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
+            <span class="icon">📄</span> Ver meu currículo completo
+        </a>
+    </div>
+</section>
+
+<section id="ia-demonstracao">
+    <h2><span class="title-icon">✨</span> Fale com a IA (Google Gemini)</h2>
+    <p>Experimente o poder do Google Gemini. Digite sua pergunta abaixo e veja a IA responder!</p>
+
+    <div id="chatContainer">
+        <p style="text-align: center; color: #888; font-style: italic;">Inicie a conversa!</p>
+    </div>
+
+    <div class="ai-input-container">
+        <textarea id="userInput" placeholder="Digite sua pergunta aqui..." rows="2"></textarea>
+        <button id="sendToAI" class="btn btn-primary">Enviar</button>
+    </div>
+    
+    <p style="font-size: 0.8em; color: #888; margin-top: 10px;">Esta funcionalidade utiliza integração via Make.com e Google Gemini API para demonstração.</p>
+</section>
+<section>
+    <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
+    <ul class="default-list">
+        <li>
+            <div class="item-content">
+                <strong>Plataformas de Conteúdo:</strong>
+                <span>Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Automação e Marketing:</strong>
+                <span>Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>E-mail Marketing:</strong>
+                <span>Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Análise de Dados:</strong>
+                <span>Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Planilhas e Dashboards:</strong>
+                <span>Criação de relatórios em Excel, Google Sheets e Looker Studio.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>CRM e Automação:</strong>
+                <span>Atuação com diversas ferramentas para integração de processos e nutrição de leads.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Gestão de Equipes:</strong>
+                <span>Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <em>Estou sempre aprimorando minhas habilidades em plataformas de Infoprodutos, automação, SQL, Make e rastreamento de dados.</em>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="contact">
+    <h2>📞 Vamos conversar?</h2>
+    <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
+    <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
+    <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
+    <div class="contact-buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
+        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Alec Cantuária - Todos os direitos reservados.
+</footer>
+
+<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
+
+<script>
+(function() {
+  function getUTM(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || "";
+  }
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    url: window.location.href,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    utm_source: getUTM('utm_source'),
+    utm_medium: getUTM('utm_medium'),
+    utm_campaign: getUTM('utm_campaign')
+  };
+
+  fetch("https://hook.us2.make.com/ny9g5tyeh1m6aobpt4ynpwdrt3gsblf4", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+})();
+</script>
+
+<script>
+    const chatContainer = document.getElementById('chatContainer');
+    const userInput = document.getElementById('userInput');
+    const sendToAIButton = document.getElementById('sendToAI');
+
+    // **SUA URL DO WEBHOOK DA IA AQUI - VERIFIQUE SE ESTÁ CORRETA NO MAKE.COM**
+    const MAKE_WEBHOOK_URL_AI = "https://hook.us2.make.com/zxmxtimui8dxqfcw0lqlnh1k2fa9om9i"; 
+
+    // Função para adicionar uma mensagem ao chat
+    function addMessageToChat(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message'); // Adiciona a classe base
+        
+        if (sender === 'user') {
+            messageDiv.classList.add('user-message');
+            messageDiv.textContent = `Você: ${text}`;
+        } else { // sender === 'ai'
+            messageDiv.classList.add('ai-message');
+            messageDiv.textContent = `IA: ${text}`;
+        }
+        chatContainer.prepend(messageDiv); // Adiciona no início para aparecer embaixo (column-reverse)
+        chatContainer.scrollTop = chatContainer.scrollHeight; // Rola para o final do chat
+    }
+
+    // Event Listener para o botão "Enviar"
+    sendToAIButton.addEventListener('click', async () => {
+        const question = userInput.value.trim();
+
+        if (question === "") {
+            return; // Não adiciona mensagem vazia ao chat
+        }
+
+        addMessageToChat(question, 'user'); // Adiciona a pergunta do usuário ao chat
+        userInput.value = ''; // Limpa o campo de texto
+        sendToAIButton.disabled = true; // Desabilita o botão
+
+        // Adiciona a mensagem "Digitando..."
+        const typingMessageDiv = document.createElement('div');
+        typingMessageDiv.id = 'typingMessage'; // Adiciona um ID para facilitar a remoção
+        typingMessageDiv.classList.add('chat-message', 'ai-message'); // Classes para estilo
+        typingMessageDiv.textContent = 'IA: Digitando...';
+        chatContainer.prepend(typingMessageDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        try {
+            // Envia a pergunta do usuário para o Webhook do Make.com
+            const response = await fetch(MAKE_WEBHOOK_URL_AI, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    prompt: question // O Make.com receberá isso como 'prompt'
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
+
+            const data = await response.json(); // Espera a resposta JSON do Webhook Response do Make
+
+            // Remove a mensagem "Digitando..." antes de adicionar a resposta final
+            const existingTypingMessage = document.getElementById('typingMessage');
+            if (existingTypingMessage) {
+                existingTypingMessage.remove();
+            }
+
+            if (data && data.gemini_response) {
+                addMessageToChat(data.gemini_response, 'ai'); // Adiciona a resposta da IA
+            } else {
+                addMessageToChat("Não foi possível obter uma resposta da IA. Tente novamente.", 'ai');
+            }
+
+        } catch (error) {
+            console.error("Erro ao comunicar com a IA:", error);
+            // Remove a mensagem "Digitando..." em caso de erro também
+            const existingTypingMessage = document.getElementById('typingMessage');
+            if (existingTypingMessage) {
+                existingTypingMessage.remove();
+            }
+            addMessageToChat("Ocorreu um erro ao conectar com a IA. Por favor, tente mais tarde.", 'ai');
+        } finally {
+            sendToAIButton.disabled = false; // Habilita o botão novamente
+        }
+    });
+</script>
+<script>
+// Rastrear clique no currículo no Google Analytics
+const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
+curriculoLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    gtag('event', 'curriculo_download', {
+      event_category: 'Curriculo',
+      event_label: this.href
+    });
+  });
+});
+</script>
+
+</body>
+</html>
