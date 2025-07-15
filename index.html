@@ -406,6 +406,59 @@ curriculoLinks.forEach(link => {
   });
 });
 </script>
+</style>
+
+<div id="ai-chatbot">
+  <header>Chat IA Gemini</header>
+  <div class="chat-body" id="chat-body"></div>
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<script>
+(function(){
+  const chatBody=document.getElementById('chat-body');
+  const form=document.getElementById('chat-form');
+  const input=document.getElementById('user-input');
+  const API_KEY='SUA_API_KEY_AQUI';
+  const API_URL='https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+API_KEY;
+  function appendMessage(text,isUser){
+    const p=document.createElement('p');
+    p.textContent=(isUser?'Você: ':'IA: ')+text;
+    p.className=isUser?'user-msg':'bot-msg';
+    chatBody.appendChild(p);
+    chatBody.scrollTop=chatBody.scrollHeight;
+  }
+  async function fetchAIResponse(promptText){
+    try{
+      const res=await fetch(API_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({"contents":[{"parts":[{"text":promptText}]}]})
+      });
+      if(!res.ok)throw new Error('Erro: '+res.status);
+      const data=await res.json();
+      return data.candidates[0].content||'Sem resposta.';
+    }catch(e){
+      return 'Erro ao conectar.';
+    }
+  }
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const q=input.value.trim();
+    if(!q)return;
+    appendMessage(q,true);
+    input.value='';
+    appendMessage('Pensando...');
+    const r=await fetchAIResponse(q);
+    chatBody.removeChild(chatBody.lastChild);
+    appendMessage(r,false);
+  });
+})();
+</script>
+<!-- FIM DO CHATBOT -->
 
 </body>
 </html>
