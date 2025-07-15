@@ -477,83 +477,198 @@ curriculoLinks.forEach(link => {
   }
 </style>
 
-<!-- HTML <!-- Chatbot HTML -->
 <div id="ai-chatbot">
-  <header>Chat IA Do Alec</header>
-  <div class="chat-body" id="chat-body"></div>
-  <form id="chat-form">
-    <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
-    <button type="submit">Enviar</button>
-  </form>
+  <header>Chat IA Do Alec</header>
+  <div class="chat-body" id="chat-body"></div>
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
+    <button type="submit">Enviar</button>
+  </form>
 </div>
 
+<script> // Certifique-se de que o script está dentro de uma tag <script> se estiver em um arquivo HTML
 (function(){
-  const chatBody = document.getElementById('chat-body');
-  const form = document.getElementById('chat-form');
-  const input = document.getElementById('user-input');
+  const chatBody = document.getElementById('chat-body');
+  const form = document.getElementById('chat-form');
+  const input = document.getElementById('user-input');
 
-  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-  const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + API_KEY;
+  const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+  const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
 
-  function appendMessage(text, isUser){
-    const p = document.createElement('p');
-    p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
-    p.className = isUser ? 'user-msg' : 'bot-msg';
-    chatBody.appendChild(p);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
+  // Adicionando um histórico de mensagens para manter o contexto da conversa
+  let chatHistory = [];
 
-  async function fetchAIResponse(promptText){
-    try{
-      const res = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          "contents": [
-            {
-              "role": "system",
-              "parts": [
-                {
-                  "text": "Você é um assistente chamado AlecBot. Quando perguntarem sobre Alec Cantuária, explique que ele é um especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda sempre com clareza e simpatia."
-                }
-              ]
-            },
-            {
-              "role": "user",
-              "parts": [
-                { "text": promptText }
-              ]
-            }
-          ]
-        })
-      });
-      if(!res.ok) {
-        console.error("Resposta do servidor:", res);
-        throw new Error('Erro HTTP: ' + res.status);
-      }
-      const data = await res.json();
-      console.log("Resposta completa:", data);
-      return data.candidates[0].content.parts[0].text || 'Sem resposta.';
-    }catch(e){
-      console.error(e);
-      return 'Erro ao conectar.';
-    }
-  }
+  function appendMessage(text, isUser){
+    const p = document.createElement('p');
+    p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
+    p.className = isUser ? 'user-msg' : 'bot-msg';
+    chatBody.appendChild(p);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const q = input.value.trim();
-    if(!q) return;
-    appendMessage(q, true);
-    input.value = '';
-    appendMessage('Pensando...');
-    const r = await fetchAIResponse(q);
-    chatBody.removeChild(chatBody.lastChild);
-    appendMessage(r, false);
-  });
+  async function fetchAIResponse(promptText){
+    try{
+      // Adicionar a instrução inicial ao histórico
+      const initialInstruction = {
+        role: "user", // Ou "model" dependendo de como você quer que a IA processe a instrução inicial
+        parts: [{ text: "Você é um assistente chamado AlecBot. Quando perguntarem sobre Alec Cantuária, explique que ele é um especialista em Customer Success, Automação de Marketing, CRM, Looker Studio e integrações com Make. Responda sempre com clareza e simpatia, no metodo AIDA para conversão." }]
+      };
+
+      // Adicionar a pergunta atual do usuário ao histórico
+      chatHistory.push({
+        role: "user",
+        parts: [{ text: promptText }]
+      });
+
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          // Incluir a instrução inicial e o histórico de chat para manter o contexto
+          contents: [initialInstruction, ...chatHistory]
+        })
+      });
+
+      if(!res.ok) throw new Error('Erro na requisição da API: ' + res.status);
+
+      const data = await res.json();
+      
+      // Extrair a resposta da IA e adicioná-la ao histórico
+      const aiResponseText = data.candidates[0].content.parts[0].text || 'Sem resposta.';
+      chatHistory.push({
+        role: "model",
+        parts: [{ text: aiResponseText }]
+      });
+
+      return aiResponseText;
+    }catch(e){
+      console.error("Erro na comunicação com a API:", e);
+      return 'Erro ao conectar. Por favor, tente novamente.';
+    }
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if(!q) return;
+
+    appendMessage(q, true); // Adiciona a mensagem do usuário
+    input.value = ''; // Limpa o input
+
+    const thinkingMessage = document.createElement('p');
+    thinkingMessage.textContent = 'IA: Pensando...';
+    thinkingMessage.className = 'bot-msg thinking'; // Adiciona uma classe para "Pensando..."
+    chatBody.appendChild(thinkingMessage);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    const r = await fetchAIResponse(q); // Obtém a resposta da IA
+
+    chatBody.removeChild(thinkingMessage); // Remove a mensagem "Pensando..."
+    appendMessage(r, false); // Adiciona a resposta final da IA
+  });
 })();
+</script>
 
+<style>
+#ai-chatbot {
+    width: 100%; /* Ajuste a largura conforme necessário */
+    max-width: 600px; /* Largura máxima para centralizar melhor */
+    margin: 50px auto; /* Centraliza na página */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif; /* Usando a fonte do seu site */
+    background-color: #fff;
+    overflow: hidden;
+}
 
+#ai-chatbot header {
+    background-color: #001f3f; /* Azul marinho do seu header */
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat-body {
+    height: 350px; /* Altura fixa para a área de chat */
+    overflow-y: auto; /* Scroll para mensagens */
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Mensagens aparecem de cima para baixo */
+    gap: 10px; /* Espaço entre as mensagens */
+    background-color: #f9fafa; /* Cor de fundo clara para o chat */
+    border-bottom: 1px solid #eee;
+}
+
+.chat-body p {
+    margin: 0; /* Remove margem padrão dos parágrafos */
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word; /* Quebra de texto para mensagens longas */
+    line-height: 1.5;
+}
+
+.user-msg {
+    background-color: #001f3f; /* Azul marinho para mensagens do usuário */
+    color: white;
+    align-self: flex-end; /* Alinha à direita */
+    border-bottom-right-radius: 5px; /* Ajusta a borda para "bolha" */
+}
+
+.bot-msg {
+    background-color: #e0e0e0; /* Cinza claro para mensagens da IA */
+    color: #333;
+    align-self: flex-start; /* Alinha à esquerda */
+    border-bottom-left-radius: 5px; /* Ajusta a borda para "bolha" */
+}
+
+.bot-msg.thinking {
+    font-style: italic;
+    color: #777;
+    background-color: #f0f8ff; /* Azul bem claro para "Pensando..." */
+    text-align: center;
+    align-self: center; /* Centraliza a mensagem de pensando */
+    max-width: fit-content;
+}
+
+#chat-form {
+    display: flex;
+    padding: 15px;
+    gap: 10px; /* Espaço entre input e botão */
+}
+
+#user-input {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+#chat-form button {
+    padding: 12px 20px;
+    background-color: #6a1b9a; /* Roxo para o botão Enviar (ou use o azul marinho se preferir) */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#chat-form button:hover {
+    background-color: #5a148a; /* Roxo mais escuro no hover */
+    transform: translateY(-1px);
+}
+
+</style>
 </body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8KRV66L"
