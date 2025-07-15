@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-P6CFC355VH');
-  </script>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P6CFC355VH');
+</script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,26 +19,32 @@
     body {
         font-family: 'Inter', sans-serif;
         margin: 0;
-        background-color: #f9fafa;
+        background-color: #f9fafa; /* Mantido o cinza claro original para o fundo do body */
         color: #333;
         line-height: 1.6;
     }
+
     header {
-        background-color: #001f3f;
+        background-color: #001f3f; /* Azul marinho */
         color: #ffffff;
         padding: 80px 20px;
         text-align: center;
         position: relative;
     }
+
     header h1 {
         font-size: 2.5em;
         margin-bottom: 10px;
     }
+
     header p.subtitle {
         font-size: 1.2em;
+        color: #ffffff;
         margin: 0 auto;
         max-width: 700px;
     }
+
+    /* Seta para rolar a página com acessibilidade */
     .scroll-down-arrow {
         position: absolute;
         bottom: 20px;
@@ -53,6 +60,8 @@
         40% { transform: translateY(-10px); }
         60% { transform: translateY(-5px); }
     }
+
+    /* Estilo base para todos os botões (links transformados em botões) */
     .btn {
         display: inline-flex;
         align-items: center;
@@ -64,39 +73,54 @@
         font-size: 1rem;
         transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        white-space: nowrap;
+        white-space: nowrap; /* Impede que o texto do botão quebre */
     }
-    .btn .icon { margin-right: 8px; }
+
+    .btn .icon {
+        margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    }
+
+    /* Botões primários (azul marinho - header e contact section) */
     .btn-primary {
-        background-color: #001f3f;
+        background-color: #001f3f; /* AZUL MARINHO */
         color: white;
     }
+
     .btn-primary:hover,
     .btn-primary:focus {
-        background-color: #00152b;
+        background-color: #00152b; /* Azul marinho mais escuro no hover */
         transform: translateY(-2px);
         outline: none;
     }
+
+    /* Botão secundário (branco - experiences section) */
     .btn-secondary {
         background-color: white;
-        color: #001f3f;
-        border: 1px solid #001f3f;
+        color: #001f3f; /* Texto azul marinho */
+        border: 1px solid #001f3f; /* Borda azul marinho para destaque */
     }
+
     .btn-secondary:hover,
     .btn-secondary:focus {
-        background-color: #e0e0e0;
-        color: #00152b;
+        background-color: #e0e0e0; /* Cinza claro no hover */
+        color: #00152b; /* Texto azul marinho mais escuro no hover */
         transform: translateY(-2px);
         outline: none;
     }
-    .header-buttons, .contact-buttons {
+
+    /* Classes para containers de botões */
+    .header-buttons,
+    .contact-buttons {
         margin-top: 30px;
-        text-align: center;
+        text-align: center; /* Centraliza os botões */
     }
+
     .experiences-button-container {
         margin-top: 20px;
-        text-align: left;
+        text-align: left; /* Alinha este botão à esquerda */
     }
+
+
     section {
         max-width: 900px;
         margin: 60px auto;
@@ -105,51 +129,88 @@
         padding: 30px 20px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+
     h2 {
         color: #001f3f;
         margin-top: 0;
-        display: flex;
+        display: flex; /* Para alinhar ícones nos títulos */
         align-items: center;
     }
-    h2 .title-icon { margin-right: 10px; font-size: 1.2em; }
-    ul { list-style: none; padding: 0; }
+
+    /* Estilo para ícones em títulos */
+    h2 .title-icon {
+        margin-right: 10px;
+        font-size: 1.2em;
+        color: #001f3f; /* Cor do título */
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    /* Estilo para as listas com checks padrão (O que eu entrego, Minha caixa de ferramentas) */
     .default-list li {
         padding: 8px 0;
         display: flex;
         align-items: flex-start;
     }
+
     .default-list li::before {
         content: '✔';
         margin-right: 10px;
         color: #28a745;
         font-size: 1.2em;
-        flex-shrink: 0;
+        flex-shrink: 0; /* Impede que o ícone encolha */
     }
+
+    /* Estilo para os itens da caixa de ferramentas para melhor alinhamento */
     .default-list li .item-content {
         display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        flex-grow: 1;
+        flex-wrap: wrap; /* Permite que o texto quebre para a próxima linha */
+        align-items: baseline; /* Alinha o texto base com o título */
+        flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
     }
+
     .default-list li .item-content strong {
-        margin-right: 5px;
-        white-space: nowrap;
+        margin-right: 5px; /* Pequeno espaço entre o título e a descrição */
+        white-space: nowrap; /* Garante que o título não quebre, se possível */
     }
+
+
+    /* Estilo específico para a seção de Experiências */
     .experiences-section ul li {
         padding: 8px 0;
-        display: flex;
-        align-items: flex-start;
+        display: flex; /* Habilita flexbox para alinhar o ícone e o conteúdo */
+        align-items: flex-start; /* Alinha o topo do ícone com o topo do texto */
     }
+
     .experiences-section .check-icon {
-        color: #28a745;
-        font-size: 1.2em;
-        margin-right: 10px;
-        flex-shrink: 0;
+        color: #28a745; /* Cor verde para o check */
+        font-size: 1.2em; /* Tamanho do check */
+        margin-right: 10px; /* Espaçamento entre o check e o texto */
+        flex-shrink: 0; /* Impede que o ícone encolha */
     }
+
+    .experiences-section .experience-content {
+        /* flex-grow: 1; Removido pois não é estritamente necessário e pode causar quebras indesejadas */
+    }
+
+    .experiences-section strong {
+        display: block; /* Garante que o cargo e a descrição fiquem em linhas separadas */
+        margin-bottom: 2px; /* Pequeno espaçamento entre cargo e descrição */
+    }
+
+
     .contact {
         text-align: center;
         padding: 30px 20px;
     }
+
+    .contact p {
+        margin: 8px 0;
+    }
+
     footer {
         text-align: center;
         padding: 20px;
@@ -158,128 +219,193 @@
         background-color: #f9fafa;
         border-top: 1px solid #ddd;
     }
+
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
 <header>
-  <h1>Alec Cantuária</h1>
-  <p class="subtitle">
-    Esta página foi criada do zero só com HTML puro, para mostrar na prática como unir <strong>automação</strong>, <strong>métricas</strong> e <strong>CRM</strong> em um só lugar.
-  </p>
-  <div class="header-buttons">
-    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
-    <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
-  </div>
-  <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
+    <h1>Alec Cantuária</h1>
+   <p class="subtitle">
+    Esta página foi criada do zero só com HTML puro, para mostrar na prática, como unir <strong>automação</strong>, <strong>métricas</strong> e <strong>CRM</strong> em um só lugar. Cada visita é monitorada pelo <strong>Google Analytics</strong> e <strong>Looker Studio</strong>, enquanto um <strong>webhook</strong> envia dados e UTMs para uma planilha de testes.
+</p>
+    <div class="header-buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
+        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
+    </div>
+    <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
 </header>
 
-<section id="o-que-eu-entrego">
-  <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
-  <ul class="default-list">
-    <li><div class="item-content"><strong>Automação inteligente:</strong><span>Integro CRM, e-mail, WhatsApp e dados em jornadas personalizadas.</span></div></li>
-    <li><div class="item-content"><strong>Decisão baseada em dados:</strong><span>Monitoro comportamento e métricas-chave.</span></div></li>
-    <li><div class="item-content"><strong>Execução ágil:</strong><span>Planejo e implemento projetos de ponta a ponta.</span></div></li>
-    <li><div class="item-content"><strong>Perfil comprometido:</strong><span>Reconhecido por dedicação e foco em soluções.</span></div></li>
-  </ul>
+<section id="o-que-eu-entrego"> <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
+    <ul class="default-list">
+        <li>
+            <div class="item-content">
+                <strong>Automação inteligente com propósito:</strong>
+                <span>Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Análise e decisão baseada em dados:</strong>
+                <span>Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Execução ágil com visão estratégica:</strong>
+                <span>Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Perfil comprometido e confiável:</strong>
+                <span>Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</span>
+            </div>
+        </li>
+    </ul>
 </section>
 
 <section class="experiences-section">
-  <h2><span class="title-icon">💼</span> Experiências</h2>
-  <ul>
-    <li><span class="check-icon">✔</span><div><strong>Supervisor de Pós-Venda – Evoluna</strong><p>Liderança de equipe e automação multicanal.</p></div></li>
-    <li><span class="check-icon">✔</span><div><strong>Founding Sales Ops – Fluida</strong><p>Estruturação comercial e processos de Social Selling.</p></div></li>
-    <li><span class="check-icon">✔</span><div><strong>SDR & Gestor de Tráfego – Mynt</strong><p>Captação de leads e mídia paga.</p></div></li>
-  </ul>
-  <div class="experiences-button-container">
-    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
-      <span class="icon">📄</span> Ver meu currículo completo
-    </a>
-  </div>
+    <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
+    <ul>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>Supervisor de Pós-Venda – Evoluna</strong>
+                <p>Liderança de equipe, execução e otimização de jornadas digitais com dados, CRM e automação multicanal com traqueamento de dados.</p>
+            </div>
+        </li>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>Founding Sales Ops – Fluida</strong>
+                <p>Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</p>
+            </div>
+        </li>
+        <li>
+            <span class="check-icon">✔</span>
+            <div class="experience-content">
+                <strong>SDR & Gestor de Tráfego – Mynt</strong>
+                <p>Captação, qualificação de leads e campanhas de mídia paga.</p>
+            </div>
+        </li>
+    </ul>
+    <div class="experiences-button-container">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
+            <span class="icon">📄</span> Ver meu currículo completo
+        </a>
+    </div>
 </section>
 
 <section>
-  <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
-  <ul class="default-list">
-    <li><div class="item-content"><strong>Plataformas de Conteúdo:</strong><span>Hotmart, Nutror, HeroSpark.</span></div></li>
-    <li><div class="item-content"><strong>Automação e Marketing:</strong><span>ManyChat, UTMs, redirecionamentos.</span></div></li>
-    <li><div class="item-content"><strong>E-mail Marketing:</strong><span>Segmentação e campanhas de conversão.</span></div></li>
-    <li><div class="item-content"><strong>Análise de Dados:</strong><span>Métricas e performance.</span></div></li>
-    <li><div class="item-content"><strong>Planilhas e Dashboards:</strong><span>Excel, Google Sheets, Looker Studio.</span></div></li>
-    <li><div class="item-content"><strong>CRM e Automação:</strong><span>Integração de processos e nutrição de leads.</span></div></li>
-    <li><div class="item-content"><strong>Gestão de Equipes:</strong><span>Liderança com foco em resultados.</span></div></li>
-  </ul>
+    <h2><span class="title-icon">🛠️</span> Minha caixa de ferramentas</h2>
+    <ul class="default-list">
+        <li>
+            <div class="item-content">
+                <strong>Plataformas de Conteúdo:</strong>
+                <span>Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Automação e Marketing:</strong>
+                <span>Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>E-mail Marketing:</strong>
+                <span>Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Análise de Dados:</strong>
+                <span>Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Planilhas e Dashboards:</strong>
+                <span>Criação de relatórios em Excel, Google Sheets e Looker Studio.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>CRM e Automação:</strong>
+                <span>Atuação com diversas ferramentas para integração de processos e nutrição de leads.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <strong>Gestão de Equipes:</strong>
+                <span>Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</span>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <em>Estou sempre aprimorando minhas habilidades em plataformas de Infoprodutos, automação, SQL, Make e rastreamento de dados.</em>
+            </div>
+        </li>
+    </ul>
 </section>
 
 <section class="contact">
-  <h2>📞 Vamos conversar?</h2>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank">Alec Cantuária</a></p>
-  <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
-  <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-  <div class="contact-buttons">
-    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo</a>
-    <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 WhatsApp</a>
-  </div>
+    <h2>📞 Vamos conversar?</h2>
+    <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
+    <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
+    <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
+    <div class="contact-buttons">
+        <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
+        <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
+    </div>
 </section>
 
 <footer>
-  &copy; 2025 Alec Cantuária - Todos os direitos reservados.
+    &copy; 2025 Alec Cantuária - Todos os direitos reservados.
 </footer>
 
-<!-- AQUI COMEÇA O CHATBOT GEMINI -->
-<style>
-  #ai-chatbot{position:fixed;bottom:20px;right:20px;width:320px;max-width:90vw;background:#fff;border:2px solid #001f3f;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:'Inter',sans-serif;z-index:9999}
-  #ai-chatbot header{background:#001f3f;color:#fff;padding:10px;font-weight:700;font-size:1.1em;border-radius:6px 6px 0 0}
-  #ai-chatbot .chat-body{max-height:250px;overflow-y:auto;padding:10px;font-size:.9em}
-  #ai-chatbot .chat-body p{margin:6px 0}
-  #ai-chatbot .user-msg{color:#001f3f;font-weight:600}
-  #ai-chatbot .bot-msg{color:#28a745}
-  #ai-chatbot form{display:flex;border-top:1px solid #ddd}
-  #ai-chatbot input{flex-grow:1;border:none;padding:10px;font-size:1em}
-  #ai-chatbot button{background:#001f3f;color:#fff;border:none;padding:0 15px;cursor:pointer}
-  #ai-chatbot button:disabled{background:#555;cursor:not-allowed}
-</style>
-<div id="ai-chatbot">
-  <header>Chat IA Gemini</header>
-  <div class="chat-body" id="chat-body"></div>
-  <form id="chat-form">
-    <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
-    <button type="submit">Enviar</button>
-  </form>
-</div>
+<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
+
 <script>
-(function(){
-  const chatBody=document.getElementById('chat-body');
-  const form=document.getElementById('chat-form');
-  const input=document.getElementById('user-input');
-  const API_KEY='AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-  const API_URL='https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+API_KEY;
-  function appendMessage(text,isUser){const p=document.createElement('p');p.textContent=(isUser?'Você: ':'IA: ')+text;p.className=isUser?'user-msg':'bot-msg';chatBody.appendChild(p);chatBody.scrollTop=chatBody.scrollHeight}
-  async function fetchAIResponse(promptText){
-    try{
-      const res=await fetch(API_URL,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({"contents":[{"parts":[{"text":promptText}]}]})
-      });
-      if(!res.ok)throw new Error('Erro: '+res.status);
-      const data=await res.json();
-      return data.candidates[0].content||'Sem resposta.';
-    }catch(e){return 'Erro ao conectar.'}
+(function() {
+  function getUTM(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || "";
   }
-  form.addEventListener('submit',async e=>{
-    e.preventDefault();
-    const q=input.value.trim();
-    if(!q)return;
-    appendMessage(q,true);
-    input.value='';
-    appendMessage('Pensando...');
-    const r=await fetchAIResponse(q);
-    chatBody.removeChild(chatBody.lastChild);
-    appendMessage(r,false);
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    url: window.location.href,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    utm_source: getUTM('utm_source'),
+    utm_medium: getUTM('utm_medium'),
+    utm_campaign: getUTM('utm_campaign')
+  };
+
+  fetch("https://hook.us2.make.com/ny9g5tyeh1m6aobpt4ynpwdrt3gsblf4", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
   });
 })();
 </script>
-<!-- FIM DO CHATBOT -->
+
+<script>
+// Rastrear clique no currículo no Google Analytics
+const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
+curriculoLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    gtag('event', 'curriculo_download', {
+      event_category: 'Curriculo',
+      event_label: this.href
+    });
+  });
+});
+</script>
+
 </body>
 </html>
