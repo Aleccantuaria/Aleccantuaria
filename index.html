@@ -394,6 +394,7 @@
 })();
 </script>
 
+<!-- Seus scripts finais -->
 <script>
 // Rastrear clique no currículo no Google Analytics
 const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
@@ -406,8 +407,70 @@ curriculoLinks.forEach(link => {
   });
 });
 </script>
+
+<!-- CSS do chatbot SEM estar dentro de script -->
+<style>
+  #ai-chatbot{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:320px;
+    max-width:90vw;
+    background:#fff;
+    border:2px solid #001f3f;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    font-family:'Inter',sans-serif;
+    z-index:9999;
+  }
+  #ai-chatbot header{
+    background:#001f3f;
+    color:#fff;
+    padding:10px;
+    font-weight:700;
+    font-size:1.1em;
+    border-radius:6px 6px 0 0;
+  }
+  #ai-chatbot .chat-body{
+    max-height:250px;
+    overflow-y:auto;
+    padding:10px;
+    font-size:.9em;
+  }
+  #ai-chatbot .chat-body p{
+    margin:6px 0;
+  }
+  #ai-chatbot .user-msg{
+    color:#001f3f;
+    font-weight:600;
+  }
+  #ai-chatbot .bot-msg{
+    color:#28a745;
+  }
+  #ai-chatbot form{
+    display:flex;
+    border-top:1px solid #ddd;
+  }
+  #ai-chatbot input{
+    flex-grow:1;
+    border:none;
+    padding:10px;
+    font-size:1em;
+  }
+  #ai-chatbot button{
+    background:#001f3f;
+    color:#fff;
+    border:none;
+    padding:0 15px;
+    cursor:pointer;
+  }
+  #ai-chatbot button:disabled{
+    background:#555;
+    cursor:not-allowed;
+  }
 </style>
 
+<!-- HTML do chatbot -->
 <div id="ai-chatbot">
   <header>Chat IA Gemini</header>
   <div class="chat-body" id="chat-body"></div>
@@ -417,12 +480,13 @@ curriculoLinks.forEach(link => {
   </form>
 </div>
 
+<!-- JS do chatbot -->
 <script>
 (function(){
   const chatBody=document.getElementById('chat-body');
   const form=document.getElementById('chat-form');
   const input=document.getElementById('user-input');
-  const API_KEY='SUA_API_KEY_AQUI';
+  const API_KEY='SUA_API_KEY_AQUI'; // Coloque sua chave
   const API_URL='https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+API_KEY;
   function appendMessage(text,isUser){
     const p=document.createElement('p');
@@ -458,7 +522,5 @@ curriculoLinks.forEach(link => {
   });
 })();
 </script>
-<!-- FIM DO CHATBOT -->
-
 </body>
 </html>
