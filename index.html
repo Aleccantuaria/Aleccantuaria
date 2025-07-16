@@ -540,7 +540,7 @@
                     body: JSON.stringify(requestBody)
                 });
 
-                if(!res.ok) throw new Error(Erro na requisição da API: ${res.status} - ${res.statusText});
+                if(!res.ok) throw new Error(`Erro na requisição da API: ${res.status} - ${res.statusText}`);
 
                 const data = await res.json();
                 
