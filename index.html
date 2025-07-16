@@ -1,5 +1,3 @@
-THE BEST E COM IA 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -497,93 +495,111 @@ THE BEST E COM IA
         </form>
     </div>
 
-    <script>
-    (function(){
-        const chatBody = document.getElementById('chat-body');
-        const form = document.getElementById('chat-form');
-        const input = document.getElementById('user-input');
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatContainer = document.getElementById('ai-chatbot');
+            const chatToggleBtn = document.getElementById('ai-chatbot-toggle');
 
-        const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1bLQU;
-
-        let chatHistory = []; 
-
-        function appendMessage(text, isUser){
-            const p = document.createElement('p');
-            p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
-            p.className = isUser ? 'user-msg' : 'bot-msg';
-            chatBody.appendChild(p);
-            chatBody.scrollTop = chatBody.scrollHeight; 
-        }
-
-        async function fetchAIResponse(promptText){
-            try{
-                // Instrução refinada para a IA: mais concisa e AIDA mais natural.
-                // Pede respostas objetivas e não formatadas rigidamente com rótulos AIDA.
-                const systemInstruction = {
-                    role: "user", 
-                    parts: [{ text: "Você é o AlecBot, assistente virtual do Alec Cantuária. Apresente Alec como uma pessoa extremamente proativa, comprometida e colaborativa. Ele tem grande facilidade de comunicação e empatia, sendo reconhecido por sua capacidade de resolver problemas de forma ágil e atenciosa. É especialista em Customer Success e possui ampla experiência com ferramentas de Automação de Marketing, CRM, análise de dados com Looker Studio e integrações com Make. Responda de forma clara, simpática e muito concisa, sempre focando na pergunta do usuário. Evite respostas excessivamente longas e frases introdutórias repetitivas. Use os princípios de AIDA (Atenção, Interesse, Desejo, Ação) de forma sutil e integrada ao fluxo natural da conversa, sem rótulos explícitos. Incentive o usuário a fazer mais perguntas ou explorar o perfil de Alec. Comece com uma saudação breve e acolhedora." }]
-                };
-
-                // Adiciona a pergunta atual do usuário ao histórico
-                chatHistory.push({
-                    role: "user",
-                    parts: [{ text: promptText }]
+            if (chatToggleBtn) {
+                chatToggleBtn.addEventListener('click', () => {
+                    chatContainer.classList.toggle('minimized');
+                    if (chatContainer.classList.contains('minimized')) {
+                        chatToggleBtn.textContent = '+';
+                        chatToggleBtn.setAttribute('aria-label', 'Maximizar chatbot');
+                    } else {
+                        chatToggleBtn.textContent = '-';
+                        chatToggleBtn.setAttribute('aria-label', 'Minimizar chatbot');
+                    }
                 });
-
-                // Constrói o corpo da requisição com a instrução e o histórico.
-                const requestBody = {
-                    contents: [systemInstruction, ...chatHistory]
-                };
-
-                const res = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(requestBody)
-                });
-
-                if(!res.ok) throw new Error(Erro na requisição da API: ${res.status} - ${res.statusText});
-
-                const data = await res.json();
-                
-                const aiResponseText = data.candidates && data.candidates[0] && 
-                                       data.candidates[0].content && data.candidates[0].content.parts && 
-                                       data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text ?
-                                       data.candidates[0].content.parts[0].text : 'Sem resposta. Por favor, tente reformular sua pergunta.';
-
-                // Adiciona a resposta da IA ao histórico
-                chatHistory.push({
-                    role: "model",
-                    parts: [{ text: aiResponseText }]
-                });
-
-                return aiResponseText;
-            }catch(e){
-                console.error("Erro na comunicação com a API:", e);
-                return 'Desculpe, houve um erro ao conectar com a IA. Por favor, tente novamente mais tarde.';
             }
-        }
-
-        form.addEventListener('submit', async e => {
-            e.preventDefault();
-            const q = input.value.trim();
-            if(!q) return;
-
-            appendMessage(q, true); 
-            input.value = ''; 
-
-            const thinkingMessage = document.createElement('p');
-            thinkingMessage.textContent = 'IA: Pensando...';
-            thinkingMessage.className = 'bot-msg thinking';
-            chatBody.appendChild(thinkingMessage);
-            chatBody.scrollTop = chatBody.scrollHeight; 
-
-            const r = await fetchAIResponse(q); 
-
-            chatBody.removeChild(thinkingMessage);
-            appendMessage(r, false); 
         });
-    })();
+
+        (function(){
+            const chatBody = document.getElementById('chat-body');
+            const form = document.getElementById('chat-form');
+            const input = document.getElementById('user-input');
+
+            const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+            const API_URL = '[https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=](https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=)' + API_KEY;
+
+            let chatHistory = [];
+
+            function appendMessage(text, isUser){
+                const p = document.createElement('p');
+                p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
+                p.className = isUser ? 'user-msg' : 'bot-msg';
+                chatBody.appendChild(p);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            async function fetchAIResponse(promptText){
+                try{
+                    // Instrução refinada para a IA: mais concisa e AIDA mais natural.
+                    // Pede respostas objetivas e não formatadas rigidamente com rótulos AIDA.
+                    const systemInstruction = {
+                        role: "user",
+                        parts: [{ text: "Você é o AlecBot, assistente virtual do Alec Cantuária. Apresente Alec como uma pessoa extremamente proativa, comprometida e colaborativa. Ele tem grande facilidade de comunicação e empatia, sendo reconhecido por sua capacidade de resolver problemas de forma ágil e atenciosa. É especialista em Customer Success e possui ampla experiência com ferramentas de Automação de Marketing, CRM, análise de dados com Looker Studio e integrações com Make. Responda de forma clara, simpática e muito concisa, sempre focando na pergunta do usuário. Evite respostas excessivamente longas e frases introdutórias repetitivas. Use os princípios de AIDA (Atenção, Interesse, Desejo, Ação) de forma sutil e integrada ao fluxo natural da conversa, sem rótulos explícitos. Incentive o usuário a fazer mais perguntas ou explorar o perfil de Alec. Comece com uma saudação breve e acolhedora." }]
+                    };
+
+                    // Adiciona a pergunta atual do usuário ao histórico
+                    chatHistory.push({
+                        role: "user",
+                        parts: [{ text: promptText }]
+                    });
+
+                    // Constrói o corpo da requisição com a instrução e o histórico.
+                    const requestBody = {
+                        contents: [systemInstruction, ...chatHistory]
+                    };
+
+                    const res = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(requestBody)
+                    });
+
+                    if(!res.ok) throw new Error(`Erro na requisição da API: ${res.status} - ${res.statusText}`);
+
+                    const data = await res.json();
+
+                    const aiResponseText = data.candidates && data.candidates.length > 0 &&
+                                                 data.candidates [0].content && data.candidates [0].content.parts &&
+                                                 data.candidates [0].content.parts.length > 0 && data.candidates [0].content.parts [0].text ?
+                                                 data.candidates [0].content.parts [0].text : 'Sem resposta. Por favor, tente reformular sua pergunta.';
+
+                    // Adiciona a resposta da IA ao histórico
+                    chatHistory.push({
+                        role: "model",
+                        parts: [{ text: aiResponseText }]
+                    });
+
+                    return aiResponseText;
+                }catch(e){
+                    console.error("Erro na comunicação com a API:", e);
+                    return 'Desculpe, houve um erro ao conectar com a IA. Por favor, tente novamente mais tarde.';
+                }
+            }
+
+            form.addEventListener('submit', async e => {
+                e.preventDefault();
+                const q = input.value.trim();
+                if(!q) return;
+
+                appendMessage(q, true);
+                input.value = '';
+
+                const thinkingMessage = document.createElement('p');
+                thinkingMessage.textContent = 'IA: Pensando...';
+                thinkingMessage.className = 'bot-msg thinking';
+                chatBody.appendChild(thinkingMessage);
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                const r = await fetchAIResponse(q);
+
+                chatBody.removeChild(thinkingMessage);
+                appendMessage(r, false);
+            });
+        })();
     </script>
 </body>
 </html>
