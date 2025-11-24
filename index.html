@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#0f172a" />
     <meta name="robots" content="index, follow" />
     
-    <meta property="og:title" content="Alec Cantuária - CS & Automação" />
+    <meta property="og:title" content="Alec Cantuária - Analista de Marketing" />
     <meta property="og:description" content="Especialista em Customer Success, Automação de Marketing e Operações. Transformo dados em estratégia escalável." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     
-    <title>Alec Cantuária - Analista de marketing</title>
+    <title>Alec Cantuária - CS & Automação</title>
     
     <style>
         * {
@@ -572,6 +572,36 @@
             text-align: center;
             border-radius: 1rem 1rem 0 0;
             flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #ai-chatbot header .chat-title {
+            flex: 1;
+            text-align: center;
+        }
+
+        #minimize-chat {
+            background: rgba(15, 23, 42, 0.3);
+            border: none;
+            color: #0f172a;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        #minimize-chat:hover {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            #minimize-chat {
+                display: block;
+            }
         }
 
         .chat-body {
@@ -715,10 +745,20 @@
 
             #ai-chatbot {
                 width: calc(100% - 1.5rem);
-                height: 70vh;
-                max-height: 500px;
+                height: 45vh;
+                max-height: 400px;
                 right: 0.75rem;
                 bottom: 0.75rem;
+            }
+
+            #ai-chatbot.minimized {
+                height: auto;
+                max-height: 60px;
+            }
+
+            #ai-chatbot.minimized .chat-body,
+            #ai-chatbot.minimized #chat-form {
+                display: none;
             }
         }
 
@@ -741,9 +781,20 @@
 
             #ai-chatbot {
                 width: calc(100% - 1rem);
-                height: 65vh;
+                height: 40vh;
+                max-height: 350px;
                 right: 0.5rem;
                 bottom: 0.5rem;
+            }
+
+            #ai-chatbot.minimized {
+                height: auto;
+                max-height: 60px;
+            }
+
+            #ai-chatbot.minimized .chat-body,
+            #ai-chatbot.minimized #chat-form {
+                display: none;
             }
 
             .chat-message p {
@@ -804,7 +855,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Alec Cantuária</h1>
-            <p class="hero-subtitle">Analista de marketing</p>
+            <p class="hero-subtitle">Analista de Marketing</p>
             <p class="hero-description">
                 Transformo dados em estratégia escalável. Especialista em integrar tráfego, CRM, e-mail marketing e automações inteligentes para gerar valor contínuo ao cliente.
             </p>
@@ -812,7 +863,7 @@
                 <a href="https://wa.me/5561998200043" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     <i class="fas fa-comments"></i> Conversar no WhatsApp
                 </a>
-                <a href="https://drive.google.com/file/d/1UFwstGKayzTjrMdHiiU1LrPCX8vdviI7/view?usp=sharing">
+                <a href="https://drive.google.com/file/d/1UFwstGKayzTjrMdHiiU1LrPCX8vdviI7/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     <i class="fas fa-file-pdf"></i> Baixar Currículo
                 </a>
             </div>
@@ -976,14 +1027,14 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-analista-de-marketing/"_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-analista-de-marketing/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
                 <div class="cta-buttons" style="margin-top: 2rem;">
                     <a href="https://wa.me/5561998200043" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                         <i class="fas fa-comments"></i> WhatsApp
                     </a>
-                    <a href="https://drive.google.com/file/d/1UFwstGKayzTjrMdHiiU1LrPCX8vdviI7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <a href="https://drive.google.com/file/d/1UFwstGKayzTjrMdHiiU1LrPCX8vdviI7/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                         <i class="fas fa-file-pdf"></i> Currículo
                     </a>
                 </div>
@@ -998,7 +1049,10 @@
 
     <!-- CHATBOT -->
     <div id="ai-chatbot">
-        <header>Chat IA Do Alec</header>
+        <header>
+            <span class="chat-title">Chat IA Do Alec</span>
+            <button id="minimize-chat" aria-label="Minimizar chat">−</button>
+        </header>
         <div class="chat-body" id="chat-body"></div>
         <form id="chat-form">
             <input type="text" id="user-input" placeholder="Digite sua pergunta..." required aria-label="Campo de entrada" />
@@ -1051,6 +1105,16 @@
     <!-- CHATBOT IA -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Minimizar/Maximizar Chatbot
+            const minimizeBtn = document.getElementById('minimize-chat');
+            const chatbot = document.getElementById('ai-chatbot');
+            
+            if (minimizeBtn) {
+                minimizeBtn.addEventListener('click', function() {
+                    chatbot.classList.toggle('minimized');
+                    minimizeBtn.textContent = chatbot.classList.contains('minimized') ? '+' : '−';
+                });
+            }
             const chatBody = document.getElementById('chat-body');
             const form = document.getElementById('chat-form');
             const input = document.getElementById('user-input');
