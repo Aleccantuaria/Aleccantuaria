@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Alec Cantuária - Especialista em Customer Success, Automação de Marketing e Operações. Transformo dados em estratégia escalável." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="robots" content="index, follow" />
+    
+    <meta property="og:title" content="Alec Cantuária - CS & Automação" />
+    <meta property="og:description" content="Especialista em Customer Success, Automação de Marketing e Operações. Transformo dados em estratégia escalável." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-P8KRV66L');</script>
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CFC355VH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,446 +26,995 @@
         gtag('config', 'G-P6CFC355VH');
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Alec Cantuária - Customer Success</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <title>Alec Cantuária - Analista de marketing</title>
     
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        * {
             margin: 0;
-            background-color: #f9fafa;
-            color: #333;
-            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a2847 100%);
+            color: #e0e7ff;
+            line-height: 1.6;
+            font-size: 16px;
+            min-height: 100vh;
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #f0f9ff;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-weight: 600;
+            color: #e0e7ff;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #a78bfa;
+        }
+
+        /* ===== LAYOUT ===== */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== HEADER ===== */
         header {
-            background-color: #001f3f;
-            color: #ffffff;
-            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(26, 40, 71, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 6rem 2rem 4rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        header p.subtitle {
-            font-size: 1.2em;
-            color: #ffffff;
-            margin: 0 auto;
-            max-width: 700px;
-        }
-        .scroll-down-arrow {
+
+        .hero::before {
+            content: '';
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2em;
-            color: #fff;
-            text-decoration: none;
-            animation: bounce 2s infinite;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #a5b4fc;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: slideInUp 0.8s ease 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 0.8s ease 0.6s both;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
-            margin: 0.5rem;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
             font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
             white-space: nowrap;
         }
-        .btn .icon {
-            margin-right: 8px;
-        }
+
         .btn-primary {
-            background-color: #001f3f;
-            color: white;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            color: #0f172a;
+            box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3);
         }
-        .btn-primary:hover,
-        .btn-primary:focus {
-            background-color: #00152b;
-            transform: translateY(-2px);
-            outline: none;
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(96, 165, 250, 0.4);
         }
+
         .btn-secondary {
-            background-color: white;
-            color: #001f3f;
-            border: 1px solid #001f3f;
+            background: transparent;
+            color: #60a5fa;
+            border: 2px solid #60a5fa;
         }
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-            background-color: #e0e0e0;
-            color: #00152b;
-            transform: translateY(-2px);
-            outline: none;
+
+        .btn-secondary:hover {
+            background: rgba(96, 165, 250, 0.1);
+            transform: translateY(-3px);
         }
-        .header-buttons,
-        .contact-buttons {
-            margin-top: 30px;
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SEÇÕES ===== */
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: rgba(30, 41, 59, 0.5);
+            border-top: 1px solid rgba(96, 165, 250, 0.1);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 3rem;
             text-align: center;
         }
-        .experiences-button-container {
-            margin-top: 20px;
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        /* ===== GRID DE CARDS ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 12px 32px rgba(96, 165, 250, 0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #a5b4fc;
+        }
+
+        /* ===== EXPERIENCE TIMELINE ===== */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #60a5fa 0%, #a78bfa 50%, transparent 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 52%;
+            margin-right: 0;
             text-align: left;
         }
-        section {
-            max-width: 900px;
-            margin: 60px auto;
-            background: #fff;
-            border-radius: 8px;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+        .timeline-dot {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            border: 4px solid #0f172a;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        h2 {
-            color: #001f3f;
-            margin-top: 0;
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 8px 24px rgba(96, 165, 250, 0.1);
+        }
+
+        .timeline-date {
+            color: #60a5fa;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: #f0f9ff;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: #a5b4fc;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                margin-left: 40px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-category {
+            margin-bottom: 3rem;
+        }
+
+        .skills-category h3 {
+            color: #60a5fa;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            color: #e0e7ff;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%);
+            border-color: rgba(96, 165, 250, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: #cbd5e1;
         }
-        h2 .title-icon {
-            margin-right: 10px;
-            font-size: 1.2em;
-            color: #001f3f;
+
+        .contact-item i {
+            color: #60a5fa;
+            font-size: 1.3rem;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        .default-list li {
-            padding: 8px 0;
-            display: flex;
-            align-items: flex-start;
-        }
-        .default-list li::before {
-            content: '✔';
-            margin-right: 10px;
-            color: #28a745;
-            font-size: 1.2em;
-            flex-shrink: 0;
-        }
-        .default-list li .item-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            flex-grow: 1;
-        }
-        .default-list li .item-content strong {
-            margin-right: 5px;
-            white-space: nowrap;
-        }
-        .experiences-section ul li {
-            padding: 8px 0;
-            display: flex;
-            align-items: flex-start;
-        }
-        .experiences-section .check-icon {
-            color: #28a745;
-            font-size: 1.2em;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-        .contact {
-            text-align: center;
-            padding: 30px 20px;
-        }
-        .contact p {
-            margin: 8px 0;
-        }
+
+        /* ===== FOOTER ===== */
         footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(96, 165, 250, 0.1);
+            padding: 2rem;
             text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.85em;
-            background-color: #f9fafa;
-            border-top: 1px solid #ddd;
+            color: #64748b;
+            margin-top: auto;
         }
-        /* Remover este bloco pois o chatbot será flutuante e não estará nesta seção */
-        /* #ia-demonstracao {
-            max-width: 900px;
-            margin: 60px auto;
-            background: #fff;
-            border-radius: 8px;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        #ia-demonstracao h2 .title-icon {
-            color: #001f3f;
-        } */
-        
-        /* ESTILOS DO CHATBOT FLUTUANTE (BLOCO 3 CSS) */
+
+        /* ===== CHATBOT ===== */
         #ai-chatbot {
             position: fixed;
-            bottom: 20px; /* Distância do fundo */
-            right: 20px; /* Distância da direita */
-            z-index: 1000; /* Garante que fique acima de outros elementos */
-            width: 350px; /* Largura da janelinha */
-            height: 450px; /* Altura da janelinha */
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra mais pronunciada para destaque */
-            font-family: 'Inter', sans-serif;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            width: 380px;
+            height: 500px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 1rem;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            box-shadow: 0 20px 60px rgba(96, 165, 250, 0.2);
+            animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         #ai-chatbot header {
-            background-color: #001f3f; /* Azul marinho */
-            color: white;
-            padding: 15px;
-            font-size: 1.1em;
-            font-weight: bold;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            color: #0f172a;
+            padding: 1.25rem;
+            font-weight: 700;
             text-align: center;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+            border-radius: 1rem 1rem 0 0;
             flex-shrink: 0;
         }
+
         .chat-body {
-            flex-grow: 1;
+            flex: 1;
             overflow-y: auto;
-            padding: 15px;
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            background-color: #f9fafa;
-            border-bottom: 1px solid #eee;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
         }
-        .chat-body p {
-            margin: 0;
-            padding: 10px 15px;
-            border-radius: 20px;
-            max-width: 80%;
+
+        .chat-message {
+            display: flex;
+            margin-bottom: 0.5rem;
+            animation: messageSlide 0.3s ease;
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-message p {
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            max-width: 85%;
             word-wrap: break-word;
+            font-size: 0.9rem;
             line-height: 1.5;
+            margin: 0;
         }
+
         .user-msg {
-            background-color: #001f3f; /* Azul marinho para usuário */
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 5px;
-            border-top-left-radius: 20px; /* Ajusta borda para bolha de conversa */
+            justify-content: flex-end;
         }
+
+        .user-msg p {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            color: #0f172a;
+            border-bottom-right-radius: 0.25rem;
+        }
+
         .bot-msg {
-            background-color: #e0e0e0; /* Cinza claro para IA */
-            color: #333;
-            align-self: flex-start;
-            border-bottom-left-radius: 5px;
-            border-top-right-radius: 20px; /* Ajusta borda para bolha de conversa */
+            justify-content: flex-start;
         }
-        .bot-msg.thinking {
+
+        .bot-msg p {
+            background: rgba(96, 165, 250, 0.2);
+            color: #e0e7ff;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .bot-msg.thinking p {
             font-style: italic;
-            color: #777;
-            background-color: #f8f8f8;
-            text-align: center;
-            align-self: center;
-            max-width: fit-content;
+            color: #a5b4fc;
         }
+
         #chat-form {
             display: flex;
-            padding: 15px;
-            gap: 10px;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.8);
             flex-shrink: 0;
+            border-top: 1px solid rgba(96, 165, 250, 0.2);
         }
+
         #user-input {
-            flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 0.5rem;
+            background: rgba(30, 41, 59, 0.8);
+            color: #e0e7ff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
+
+        #user-input:focus {
+            outline: none;
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+        }
+
+        #user-input::placeholder {
+            color: #64748b;
+        }
+
         #chat-form button {
-            padding: 12px 20px;
-            background-color: #001f3f; /* Azul marinho */
-            color: white;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            color: #0f172a;
             border: none;
-            border-radius: 6px;
+            border-radius: 0.5rem;
             cursor: pointer;
-            font-size: 1rem;
             font-weight: 600;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
+
         #chat-form button:hover {
-            background-color: #00152b;
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
         }
+
+        /* ===== RESPONSIVIDADE ===== */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             #ai-chatbot {
-                width: 90%;
-                right: 5%;
-                left: 5%;
-                height: 80vh;
-                bottom: 10px;
-                top: auto;
+                width: calc(100% - 1.5rem);
+                height: 70vh;
+                max-height: 500px;
+                right: 0.75rem;
+                bottom: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            #ai-chatbot {
+                width: calc(100% - 1rem);
+                height: 65vh;
+                right: 0.5rem;
+                bottom: 0.5rem;
+            }
+
+            .chat-message p {
+                max-width: 90%;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        .chat-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-body::-webkit-scrollbar-track {
+            background: rgba(96, 165, 250, 0.05);
+            border-radius: 10px;
+        }
+
+        .chat-body::-webkit-scrollbar-thumb {
+            background: rgba(96, 165, 250, 0.3);
+            border-radius: 10px;
+        }
+
+        .chat-body::-webkit-scrollbar-thumb:hover {
+            background: rgba(96, 165, 250, 0.5);
+        }
+
+        /* ===== ACESSIBILIDADE ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
-
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8KRV66L"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-   <header>
-  <h1>Alec Cantuária</h1>
-  <p class="subtitle">
-    Esta página foi desenvolvida do zero em HTML puro, servindo como uma demonstração prática de como a <strong>automação</strong>, <strong>análise de métricas</strong> e <strong>CRM</strong> se integram. Cada visita é monitorada via <strong>Google Analytics</strong> e visualizada no <strong>Looker Studio</strong>, com um <strong>webhook</strong> enviando dados e UTMs para uma planilha de testes. Além disso, a página conta com um <strong>chatbot inteligente integrado por API</strong>, demonstrando habilidades em <strong>desenvolvimento web</strong>, <strong>consumo de APIs</strong> e <strong>automação com IA</strong>.
-  </p>
-  <div class="header-buttons">
-    <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Ver meu currículo</a>
-    <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
-  </div>
-  <a href="#o-que-eu-entrego" class="scroll-down-arrow" aria-label="Scroll para a próxima seção">&#8595;</a>
-</header>
 
-    <section id="o-que-eu-entrego"> 
-        <h2><span class="title-icon">🚀</span> O que eu entrego</h2>
-        <ul class="default-list">
-            <li>
-                <div class="item-content">
-                    <strong>Automação inteligente com propósito:</strong>
-                    <span>Integro CRM, e-mail marketing, WhatsApp e segmentação de dados em jornadas personalizadas que movem o cliente do interesse à compra.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Análise e decisão baseada em dados:</strong>
-                    <span>Monitoro comportamento do usuário, desempenho de campanhas e métricas-chave para otimizar cada ponto da jornada e gerar resultados mensuráveis.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Execução ágil com visão estratégica:</strong>
-                    <span>Atuação prática e autonomia total para planejar, implementar e acompanhar projetos de ponta a ponta — da ideia à entrega.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Perfil comprometido e confiável:</strong>
-                    <span>Reconhecido por lideranças pela dedicação constante, proatividade e foco em soluções que fazem diferença no dia a dia.</span>
-                </div>
-            </li>
-        </ul>
-    </section>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">AC</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <section class="experiences-section">
-        <h2><span class="title-icon">💼</span> Experiências que sustentam meu trabalho</h2>
-        <ul>
-            <li>
-                <span class="check-icon">✔</span>
-                <div class="experience-content">
-                    <strong>Supervisor de Pós-Venda – Evoluna</strong>
-                    <p>Liderança de equipe, execução e otimização de jornadas digitais com dados, CRM e automação multicanal com traqueamento de dados.</p>
-                </div>
-            </li>
-            <li>
-                <span class="check-icon">✔</span>
-                <div class="experience-content">
-                    <strong>Founding Sales Ops – Fluida</strong>
-                    <p>Estruturação comercial completa, CRM, playbooks e processos de Social Selling.</p>
-                </div>
-            </li>
-            <li>
-                <span class="check-icon">✔</span>
-                <div class="experience-content">
-                    <strong>SDR & Gestor de Tráfego – Mynt</strong>
-                    <p>Captação, qualificação de leads e campanhas de mídia paga.</p>
-                </div>
-            </li>
-        </ul>
-        <div class="experiences-button-container">
-            <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVzpv/view?usp=sharing" target="_blank" class="btn btn-secondary">
-                <span class="icon">📄</span> Ver meu currículo completo
-            </a>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Alec Cantuária</h1>
+            <p class="hero-subtitle">Analista de marketing</p>
+            <p class="hero-description">
+                Transformo dados em estratégia escalável. Especialista em integrar tráfego, CRM, e-mail marketing e automações inteligentes para gerar valor contínuo ao cliente.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5561998200043" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fas fa-comments"></i> Conversar no WhatsApp
+                </a>
+                <a href="https://drive.google.com/file/d/1UFwstGKayzTjrMdHiiU1LrPCX8vdviI7/view?usp=sharing">
+                    <i class="fas fa-file-pdf"></i> Baixar Currículo
+                </a>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2><span class="title-icon">🛠</span> Minha caixa de ferramentas</h2>
-        <ul class="default-list">
-            <li>
-                <div class="item-content">
-                    <strong>Plataformas de Conteúdo:</strong>
-                    <span>Hotmart, Nutror, HeroSpark — gestão de infoprodutos, cursos e webinários.</span>
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Mim</h2>
+                <p class="section-description">
+                    Atuo de forma proativa na integração entre dados, tecnologia e estratégia, liderando operações que conectam tráfego, CRM, e-mail marketing e funis automatizados para gerar valor contínuo ao cliente. Com visão analítica e domínio técnico, transformo insights em ações escaláveis.
+                </p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Automação Inteligente</h3>
+                    <p>Criação de fluxos automatizados via Make, n8n e ManyChat que conectam captação, nutrição e conversão.</p>
                 </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Automação e Marketing:</strong>
-                    <span>Criação de fluxos ManyChat, disparos programados, redirecionamentos estratégicos e rastreamento com UTMs.</span>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Análise de Dados</h3>
+                    <p>Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas baseadas em dados.</p>
                 </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>E-mail Marketing:</strong>
-                    <span>Desenvolvimento, segmentação e otimização de campanhas com foco em conversão.</span>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Gestão de Tráfego Pago</h3>
+        <p>Criação, otimização e escalonamento de campanhas com foco em CPL baixo, leads qualificados e resultados mensuráveis.</p>
                 </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Análise de Dados:</strong>
-                    <span>Monitoramento de métricas, comportamento do usuário e performance para decisões estratégicas.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Planilhas e Dashboards:</strong>
-                    <span>Criação de relatórios em Excel, Google Sheets e Looker Studio.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>CRM e Automação:</strong>
-                    <span>Atuação com diversas ferramentas para integração de processos e nutrição de leads.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <strong>Gestão de Equipes:</strong>
-                    <span>Liderança de times de suporte e pós-venda com foco em resultados e eficiência.</span>
-                </div>
-            </li>
-            <li>
-                <div class="item-content">
-                    <em>Estou sempre aprimorando minhas habilidades em plataformas de Infoprodutos, automação, SQL, Make e rastreamento de dados.</em>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <section class="contact">
-        <h2>📞 Vamos conversar?</h2>
-        <p>Estou preparado para agregar valor e contribuir com resultados reais.</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-customer-success/" target="_blank" rel="noopener noreferrer">Alec Cantuária</a></p>
-        <p><strong>WhatsApp:</strong> (61) 99820-0043</p>
-        <p><strong>E-mail:</strong> <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a></p>
-        <div class="contact-buttons">
-            <a href="https://drive.google.com/file/d/1TL9NYMznb-xnXNmYO6XXfeQryvMFVvpv/view?usp=sharing" target="_blank" class="btn btn-primary">📄 Acesse Meu Currículo Aqui</a>
-            <a href="https://wa.me/5561998200043" target="_blank" class="btn btn-primary">💬 Fale comigo no WhatsApp</a>
+            </div>
         </div>
     </section>
 
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experiências Profissionais</h2>
+                <p class="section-description">Trajetória de crescimento e aprendizado contínuo</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-title">Analista de Marketing | Head Operacional</div>
+                        <div class="timeline-company">Rocket Aceleradora</div>
+                        <div class="timeline-description">
+                            Implementação de funis comerciais automatizados com IA. Gestão completa da jornada do cliente. Liderança na operação da ferramenta Botzapp com foco em automações inteligentes.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-title">Analista de Marketing</div>
+                        <div class="timeline-company">Onevo</div>
+                        <div class="timeline-description">
+                            Gestão de tráfego com análise de dados. Desenvolvimento de automações para relatórios de performance em tempo real. Criação de landing pages voltadas à conversão.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-title">Supervisor de Pós-Venda</div>
+                        <div class="timeline-company">Evoluna</div>
+                        <div class="timeline-description">
+                            Execução técnica de webinários e e-mail marketing. Segmentação de leads e otimização contínua. Liderança do time de pós-vendas com foco em satisfação e retenção.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-title">Founding Sales Ops</div>
+                        <div class="timeline-company">Fluida</div>
+                        <div class="timeline-description">
+                            Estruturação do setor comercial. Implementação de CRM e criação de playbook de pré-vendas. Desenvolvimento de inteligência comercial e mapeamento de processos.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-title">Gestor de Tráfego Pago & SDR</div>
+                        <div class="timeline-company">Mynt - Agência de Marketing Digital</div>
+                        <div class="timeline-description">
+                            Criação e otimização de campanhas em Meta Ads e Google Ads. Atuação em pré-vendas e relacionamento com potenciais clientes. Segmentação de público-alvo e análise de métricas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Competências</h2>
+                <p class="section-description">Hard skills e soft skills que impulsionam resultados</p>
+            </div>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Hard Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-tag">Plataformas de Conteúdo</div>
+                        <div class="skill-tag">Automação (Make, n8n, ManyChat)</div>
+                        <div class="skill-tag">Landing Pages & Conversão</div>
+                        <div class="skill-tag">E-mail Marketing</div>
+                        <div class="skill-tag">Análise de Dados</div>
+                        <div class="skill-tag">CRM & Automação</div>
+                        <div class="skill-tag">Google Ads & Meta Ads</div>
+                        <div class="skill-tag">Hotmart, Nutror, HeroSpark</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-tag">Comunicação Assertiva</div>
+                        <div class="skill-tag">Proatividade</div>
+                        <div class="skill-tag">Autodesenvolvimento</div>
+                        <div class="skill-tag">Análise de Comportamento</div>
+                        <div class="skill-tag">Flexibilidade</div>
+                        <div class="skill-tag">Visão Sistêmica</div>
+                        <div class="skill-tag">Liderança</div>
+                        <div class="skill-tag">Foco em Resultados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <div class="container">
+            <div class="contact-section">
+                <h2>Vamos Conversar?</h2>
+                <p style="color: #cbd5e1; margin-bottom: 2rem;">
+                    Estou sempre aberto a novas oportunidades e desafios. Entre em contato comigo!
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5561998200043">(61) 99820-0043</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:aleccantuaria@gmail.com">aleccantuaria@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Natal/RN</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/alec-cantu%C3%A1ria-analista-de-marketing/"_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="cta-buttons" style="margin-top: 2rem;">
+                    <a href="https://wa.me/5561998200043" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fas fa-comments"></i> WhatsApp
+                    </a>
+                    <a href="https://drive.google.com/file/d/1UFwstGKayzTjrMdHiiU1LrPCX8vdviI7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fas fa-file-pdf"></i> Currículo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        &copy; 2025 Alec Cantuária - Todos os direitos reservados.
+        <p>&copy; 2025 Alec Cantuária. Todos os direitos reservados.</p>
     </footer>
 
-    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js"></script>
+    <!-- CHATBOT -->
+    <div id="ai-chatbot">
+        <header>Chat IA Do Alec</header>
+        <div class="chat-body" id="chat-body"></div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Digite sua pergunta..." required aria-label="Campo de entrada" />
+            <button type="submit" aria-label="Enviar">Enviar</button>
+        </form>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/082d89cc-6386-41fb-a3dc-fe1125d268ad-loader.js" async></script>
 
     <script>
-        (function() {
-            function getUTM(param) {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Webhook & Analytics
+            function getUTMParameter(param) {
                 const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param) || "";
+                return urlParams.get(param) || '';
             }
 
             const payload = {
@@ -461,128 +1022,123 @@
                 url: window.location.href,
                 referrer: document.referrer,
                 userAgent: navigator.userAgent,
-                utm_source: getUTM('utm_source'),
-                utm_medium: getUTM('utm_medium'),
-                utm_campaign: getUTM('utm_campaign')
+                utm_source: getUTMParameter('utm_source'),
+                utm_medium: getUTMParameter('utm_medium'),
+                utm_campaign: getUTMParameter('utm_campaign')
             };
 
-            fetch("https://hook.us2.make.com/ny9g5tyeh1m6aobpt4ynpwdrt3gsblf4", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
+            fetch('https://hook.us2.make.com/ny9g5tyeh1m6aobpt4ynpwdrt3gsblf4', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
-            });
-        })();
-    </script>
+            }).catch(error => console.error('Webhook error:', error));
 
-    <script>
-        const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
-        curriculoLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                gtag('event', 'curriculo_download', {
-                    event_category: 'Curriculo',
-                    event_label: this.href
+            // GA4 Event Tracking
+            const curriculoLinks = document.querySelectorAll('a[href*="drive.google"]');
+            curriculoLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'curriculo_download', {
+                            event_category: 'Curriculo',
+                            event_label: this.href
+                        });
+                    }
                 });
             });
         });
     </script>
 
-    <div id="ai-chatbot">
-        <header>Chat IA Do Alec</header>
-        <div class="chat-body" id="chat-body"></div>
-        <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Digite sua pergunta..." required>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-
+    <!-- CHATBOT IA -->
     <script>
-    (function(){
-        const chatBody = document.getElementById('chat-body');
-        const form = document.getElementById('chat-form');
-        const input = document.getElementById('user-input');
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatBody = document.getElementById('chat-body');
+            const form = document.getElementById('chat-form');
+            const input = document.getElementById('user-input');
 
-        const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
-        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
+            const API_KEY = 'AIzaSyBOf_YEdM0Ai5PD-rDh6GnI1b4XN21jLQU';
+            const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY;
 
-        let chatHistory = []; 
+            let chatHistory = [];
 
-        function appendMessage(text, isUser){
-            const p = document.createElement('p');
-            p.textContent = (isUser ? 'Você: ' : 'IA: ') + text;
-            p.className = isUser ? 'user-msg' : 'bot-msg';
-            chatBody.appendChild(p);
-            chatBody.scrollTop = chatBody.scrollHeight; 
-        }
+            const systemInstruction = {
+                role: 'user',
+                parts: [{
+                    text: 'Você é o AlecBot, assistente virtual do Alec Cantuária. Apresente Alec como especialista em Customer Success, Automação de Marketing e Operações. Ele domina Make, n8n, ManyChat, CRM, e-mail marketing, análise de dados e liderança de equipes. Responda de forma clara, simpática e breve. Sempre focando na pergunta do usuário. Evite respostas longas. Comece com uma saudação curta e amigável.'
+                }]
+            };
 
-        async function fetchAIResponse(promptText){
-            try{
-  "role": "user",
-  "parts": [
-    {
-      "text": "Você é o AlecBot, assistente virtual do Alec Cantuária. Apresente Alec como uma pessoa proativa, comprometida e colaborativa, com ótima comunicação e empatia. Ele é especialista em Customer Success e domina Automação de Marketing, CRM, Looker Studio e Make. Responda de forma clara, simpática e breve, sempre focando na pergunta do usuário. Evite respostas longas e repetitivas. Use AIDA de forma sutil, integrada ao fluxo natural, sem rótulos. Comece com uma saudação curta e amigável."
-    }
-  ]
-}
-;
-                // Adiciona a pergunta atual do usuário ao histórico
-                chatHistory.push({
-                    role: "user",
-                    parts: [{ text: promptText }]
-                });
-
-                // Constrói o corpo da requisição com a instrução e o histórico.
-                const requestBody = {
-                    contents: [systemInstruction, ...chatHistory]
-                };
-
-                const res = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(requestBody)
-                });
-
-                if(!res.ok) throw new Error(`Erro na requisição da API: ${res.status} - ${res.statusText}`);
-
-                const data = await res.json();
+            function appendMessage(text, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chat-message ' + (isUser ? 'user-msg' : 'bot-msg');
                 
-                const aiResponseText = data.candidates && data.candidates[0] && 
-                                       data.candidates[0].content && data.candidates[0].content.parts && 
-                                       data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text ?
-                                       data.candidates[0].content.parts[0].text : 'Sem resposta. Por favor, tente reformular sua pergunta.';
-
-                // Adiciona a resposta da IA ao histórico
-                chatHistory.push({
-                    role: "model",
-                    parts: [{ text: aiResponseText }]
-                });
-
-                return aiResponseText;
-            }catch(e){
-                console.error("Erro na comunicação com a API:", e);
-                return 'Desculpe, houve um erro ao conectar com a IA. Por favor, tente novamente mais tarde.';
+                const p = document.createElement('p');
+                p.textContent = text;
+                messageDiv.appendChild(p);
+                chatBody.appendChild(messageDiv);
+                
+                chatBody.scrollTop = chatBody.scrollHeight;
             }
-        }
 
-        form.addEventListener('submit', async e => {
-            e.preventDefault();
-            const q = input.value.trim();
-            if(!q) return;
+            async function fetchAIResponse(promptText) {
+                try {
+                    chatHistory.push({
+                        role: 'user',
+                        parts: [{ text: promptText }]
+                    });
 
-            appendMessage(q, true); 
-            input.value = ''; 
+                    const requestBody = {
+                        contents: [systemInstruction, ...chatHistory]
+                    };
 
-            const thinkingMessage = document.createElement('p');
-            thinkingMessage.textContent = 'IA: Pensando...';
-            thinkingMessage.className = 'bot-msg thinking';
-            chatBody.appendChild(thinkingMessage);
-            chatBody.scrollTop = chatBody.scrollHeight; 
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(requestBody)
+                    });
 
-            const r = await fetchAIResponse(q); 
+                    if (!response.ok) {
+                        throw new Error(`API Error: ${response.status}`);
+                    }
 
-            chatBody.removeChild(thinkingMessage);
-            appendMessage(r, false); 
+                    const data = await response.json();
+                    const aiResponseText = data.candidates?.[0]?.content?.parts?.[0]?.text || 
+                        'Desculpe, não consegui processar sua pergunta. Tente novamente.';
+
+                    chatHistory.push({
+                        role: 'model',
+                        parts: [{ text: aiResponseText }]
+                    });
+
+                    return aiResponseText;
+                } catch (error) {
+                    console.error('AI Error:', error);
+                    return 'Desculpe, houve um erro ao conectar com a IA. Por favor, tente novamente mais tarde.';
+                }
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const question = input.value.trim();
+                
+                if (!question) return;
+
+                appendMessage(question, true);
+                input.value = '';
+
+                const thinkingDiv = document.createElement('div');
+                thinkingDiv.className = 'chat-message bot-msg thinking';
+                const thinkingP = document.createElement('p');
+                thinkingP.textContent = 'Pensando...';
+                thinkingDiv.appendChild(thinkingP);
+                chatBody.appendChild(thinkingDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                const response = await fetchAIResponse(question);
+
+                chatBody.removeChild(thinkingDiv);
+                appendMessage(response, false);
+            });
         });
-    })();
     </script>
 </body>
 </html>
